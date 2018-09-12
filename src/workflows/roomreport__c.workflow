@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>mail123</fullName>
+        <ccEmails>tiandaiwei@gaushmedical.com</ccEmails>
+        <description>mail123</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>chenxiaoyan@mingwangmedical.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/EmailTemplate3</template>
+    </alerts>
+    <rules>
+        <fullName>rule1</fullName>
+        <actions>
+            <name>mail123</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>roomreport__c.state__c</field>
+            <operation>equals</operation>
+            <value>关闭</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

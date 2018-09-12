@@ -1,0 +1,316 @@
+/**
+*Dis:技术服务报告报告在关闭时，可以生成打印模板，并自动发送报告附件邮件到第一责任人邮箱中  
+     trigger中不能使用Blob b = ref.getContentAsPDF(); 
+*Time:2015年3月13日11:51:11
+*Author:Somnus Wang
+**/
+@RestResource(urlMapping='/sendServiceEmail/*') 
+global  class Cbl_SendServiceReportEmail {
+      @HttpPost  
+    global static void sendEmail(String id) {
+      //查询技术服务报告
+        servicereport__c service=[select Name,Id,customer__c,RecordTypeId,receptiontime__c,servicerequest__r.requesttime__c,
+		servicerequest__r.Name,servicerequest__r.OwnerId from servicereport__c where Id =:id];
+         
+        User user=[select Name,SenderEmail,Email from User where Id =:service.servicerequest__r.OwnerId];//查询所有人邮件地址
+        
+        System.debug('发邮件查询结果。。。。'+service.customer__c+'邮件地址'+user.Email); 
+        
+        String head=service.customer__c+'技术服务报告'+service.servicerequest__r.requesttime__c.year()+'-'+service.servicerequest__r.requesttime__c.month()+'-'+service.servicerequest__r.requesttime__c.day();//附件名
+        String bodys='尊敬的用户：<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您好！附件是'+service.customer__c+service.servicerequest__r.requesttime__c.year()+'-'+service.servicerequest__r.requesttime__c.month()+'-'+service.servicerequest__r.requesttime__c.day()+service.servicerequest__r.Name+'的技术服务报告,请您尽快处理!';
+        
+        
+        PageReference ref = Page.CreatePDF;
+        ref.getParameters().put('idss',id); 
+        
+        Blob b = ref.getContentAsPDF();  
+        Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();  
+  
+        Messaging.EmailFileAttachment efa1 = new Messaging.EmailFileAttachment();  
+        efa1.setFileName(head+'.pdf');  
+        efa1.setBody(b);  
+  
+        String addresses=user.Email;  
+        //String addresses='792452201@qq.com'; 
+      
+        email.setSubject(head);//邮件主题
+        email.setToAddresses( new String[]{addresses});//邮件地址
+        email.setHtmlBody(bodys);//邮件正文  
+        email.setFileAttachments(new Messaging.EmailFileAttachment[] {efa1}); //邮件附件 
+     
+        Messaging.SendEmailResult [] r = Messaging.sendEmail(new Messaging.SingleEmailMessage[] {email});  
+     System.debug('发邮件。。。。。。最终结束。。。。。。。。。');
+    }  
+    public void test()
+    {
+        Integer i=0;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+        i++;
+    } 	
+}

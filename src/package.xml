@@ -1,0 +1,977 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>AccTriggerTest</members>
+        <members>AccountHelper</members>
+        <members>AccountProductLineTriggerTest</members>
+        <members>AccountTeamsTest</members>
+        <members>AttachmentCusOb20TriggerTest</members>
+        <members>AttachmentTriggerTest</members>
+        <members>BXAttachmentTriggerTest</members>
+        <members>BatchUpdateAccountTeam</members>
+        <members>BatchUpdateAccountTeamTest</members>
+        <members>Batch_Equipment_NewChance</members>
+        <members>BusinessAreaTriggerTest</members>
+        <members>CaseTrainTriggerTest</members>
+        <members>CasegcsTriggerTest</members>
+        <members>Cbl_Account_Name</members>
+        <members>Cbl_Account_Name_Test</members>
+        <members>Cbl_CreateInstallPDF</members>
+        <members>Cbl_CreateServiceReportPDF</members>
+        <members>Cbl_CustomObject4_updateChance</members>
+        <members>Cbl_CustomObject4_updateChance_Test</members>
+        <members>Cbl_Equipment_InsertRequest</members>
+        <members>Cbl_Equipment_InsertRequest_Test</members>
+        <members>Cbl_Equipment_time</members>
+        <members>Cbl_SendInstallEmail</members>
+        <members>Cbl_SendInstallEmail_Test</members>
+        <members>Cbl_SendServiceReportEmail</members>
+        <members>Cbl_SendServiceReportEmail_Test</members>
+        <members>Cbl_ServiceGroup_Share</members>
+        <members>Cbl_ServiceGroup_Share_Test</members>
+        <members>Cbl_ServiceGroup_sendEmail</members>
+        <members>Cbl_Warranty_updateChance</members>
+        <members>Cbl_Warranty_updateChance_Test</members>
+        <members>Cbl_Warrantyproduct_insertRequest</members>
+        <members>Cbl_Warrantyproduct_insertRequest_Test</members>
+        <members>Cbl_Warrantyproduct_updateEquipment</members>
+        <members>Cbl_installreport_time</members>
+        <members>Cbl_outinstock_updatestock</members>
+        <members>Cbl_outinstock_updatestock_Test</members>
+        <members>Cbl_servicereport_renew</members>
+        <members>Cbl_sparepart_spstate</members>
+        <members>Cbl_sparepart_spstate_Test</members>
+        <members>Cbl_sparepart_whetherperiod</members>
+        <members>Cbl_sparepart_whetherperiod_Test</members>
+        <members>Cbl_sparepartdetail_state</members>
+        <members>Cbl_sparepartdetail_state_Test</members>
+        <members>ChangePasswordController</members>
+        <members>ChangePasswordControllerTest</members>
+        <members>Cls_EquipmentBatch</members>
+        <members>Cls_EquipmentBatch_Test</members>
+        <members>Cls_SchedulEquipmentWarrantyBatch_Test</members>
+        <members>Cls_SchedulEquipmentWarrantyproductBatch</members>
+        <members>Cls_SchedulWarrantyproductBatch</members>
+        <members>Cls_SchedulableRegistrationcBatch_Test</members>
+        <members>Cls_SchedulableRegistrationcodeBatch</members>
+        <members>Cls_Schedulableservicerequest_batch</members>
+        <members>Cls_Schedulableservicerequest_batch_Test</members>
+        <members>CompleteTimeTest</members>
+        <members>ConfigureTriggerTest</members>
+        <members>ContractAfterTriggerTest</members>
+        <members>ContractFinalNameTriggerTest</members>
+        <members>ContractTriggerTest</members>
+        <members>Ctr_CreatePDF_InstallReport</members>
+        <members>Ctr_CreatePDF_ServiceReport</members>
+        <members>Ctr_CreatePDF_ServiceReport_Test</members>
+        <members>CustomLevelTriggerTest</members>
+        <members>CustomerFirstManagementTriggerTest</members>
+        <members>CustomerThreeTriggerTest</members>
+        <members>DeliveryInfoRestService</members>
+        <members>DeliveryInfoRestServiceTest</members>
+        <members>DocumentUtil</members>
+        <members>EquipmentSchedulable</members>
+        <members>EventAccountTriggerTest</members>
+        <members>EventOnAccountTest</members>
+        <members>ForgotPasswordController</members>
+        <members>ForgotPasswordControllerTest</members>
+        <members>GeneratedOrderWebService</members>
+        <members>GeneratedQCWebservice</members>
+        <members>ImageFile</members>
+        <members>LoadingConditionNextWeek</members>
+        <members>LoadingConditionNextWeekTest</members>
+        <members>LoadingConditionThisWeek</members>
+        <members>LoadingConditionThisWeekTest</members>
+        <members>MyProfilePageController</members>
+        <members>MyProfilePageControllerTest</members>
+        <members>NewConfigrationList</members>
+        <members>NewConfigrationListTest</members>
+        <members>NewWorkTest</members>
+        <members>OppAmountTriggerTest</members>
+        <members>OppPusherTests</members>
+        <members>OpportunityAccountNameTriggerTest</members>
+        <members>OpportunityCloseTimeTriggerTest</members>
+        <members>OpportunityConditionChangedThisWeek</members>
+        <members>OpportunityConditionChangedThisWeekTest</members>
+        <members>OpportunityConditionCreatedThisWeek</members>
+        <members>OpportunityConditionCreatedThisWeekTest</members>
+        <members>OpportunityConditionNextWeek</members>
+        <members>OpportunityConditionNextWeekTest</members>
+        <members>OpportunityConditionThisWeek</members>
+        <members>OpportunityConditionThisWeekTest</members>
+        <members>OpportunityHelper</members>
+        <members>OpportunityLineTriggerTest</members>
+        <members>OpportunityRecordTriggerTest</members>
+        <members>OpportunityStatusTriggerTest</members>
+        <members>OrderHelper</members>
+        <members>OrderHelperTest</members>
+        <members>Page_detail</members>
+        <members>PagedetailTest</members>
+        <members>PayBachInfoRestService</members>
+        <members>PayBachInfoRestServiceTest</members>
+        <members>PrintTriggerTest</members>
+        <members>ProductLineTest</members>
+        <members>QATree</members>
+        <members>QAdetail</members>
+        <members>RestServiceCoreLogic</members>
+        <members>RestServiceUtil</members>
+        <members>SalesWeeklyReporHelper</members>
+        <members>SchedulableEquipmentChance</members>
+        <members>SchedulableEquipmentChance_Test</members>
+        <members>SchedulableEquipmentWarrantyproduct</members>
+        <members>SchedulableRegistrationcode</members>
+        <members>Schedulableservicerequest</members>
+        <members>ScheduleCalcChangedOpp</members>
+        <members>ScheduleCalcChangedOppTest</members>
+        <members>ScheduleCreateWeeklySalesReport</members>
+        <members>ScheduleCreateWeeklySalesReportTest</members>
+        <members>ScheduleSyncAmount2</members>
+        <members>ScheduleSyncAmountTest</members>
+        <members>ScheduleSyncWeeklyReportData</members>
+        <members>ScheduleSyncWeeklyReportDataTest</members>
+        <members>SendPDFEmail</members>
+        <members>ServiceCreatedDateTriggerTest</members>
+        <members>ServiceTriggerTest</members>
+        <members>SharingOpportunityToUsers</members>
+        <members>SiteFileBrowser</members>
+        <members>SiteLoginController</members>
+        <members>SiteLoginControllerTest</members>
+        <members>SiteRegisterController</members>
+        <members>SiteRegisterControllerTest</members>
+        <members>StrTool</members>
+        <members>Stubby</members>
+        <members>SyncAccountInfWebService</members>
+        <members>SyncFirstAccountRestService</members>
+        <members>SyncFirstAccountRestServiceTest</members>
+        <members>SyncOrderWebservice</members>
+        <members>SyncPricetoContract</members>
+        <members>SyncProductInfoRestService</members>
+        <members>SyncProductInfoRestServiceTest</members>
+        <members>TestConfig</members>
+        <members>WarrentyContractHelper</members>
+        <members>WorkPlanTNextWeek</members>
+        <members>WorkPlanTNextWeekTest</members>
+        <members>WorkPlanThisWeek</members>
+        <members>WorkPlanThisWeekTest</members>
+        <members>pollingTriggerTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>SiteFooter</members>
+        <members>SiteHeader</members>
+        <members>SiteLogin</members>
+        <members>SitePoweredBy</members>
+        <name>ApexComponent</name>
+    </types>
+    <types>
+        <members>AnswersHome</members>
+        <members>BandwidthExceeded</members>
+        <members>ChangePassword</members>
+        <members>ConfigrationListPage</members>
+        <members>ConfigrationListPrintPage</members>
+        <members>ConfigrationListPrintPage1</members>
+        <members>ConfigrationListPrintPage2</members>
+        <members>ConfigrationListPrintPage3</members>
+        <members>ConfigurationListLockPage</members>
+        <members>ConfigurationView</members>
+        <members>CreatePDF</members>
+        <members>Exception</members>
+        <members>FileNotFound</members>
+        <members>ForgotPassword</members>
+        <members>ForgotPasswordConfirm</members>
+        <members>IdeasHome</members>
+        <members>InMaintenance</members>
+        <members>InstallReportPDF</members>
+        <members>LoadingConditionNextWeek</members>
+        <members>LoadingConditionNextWeekMobile</members>
+        <members>LoadingConditionThisWeek</members>
+        <members>LoadingConditionThisWeekMobile</members>
+        <members>MyProfilePage</members>
+        <members>OpportunityChangedThisWeekMobile</members>
+        <members>OpportunityConditionChangedThisWeekPage</members>
+        <members>OpportunityConditionCreatedThisWeekPage</members>
+        <members>OpportunityConditionNextWeekPage</members>
+        <members>OpportunityConditionNextWeekPageMobile</members>
+        <members>OpportunityConditionThisWeekPage</members>
+        <members>OpportunityConditionThisWeekPageMobile</members>
+        <members>OpportunityCreatedThisWeekMobile</members>
+        <members>Page_detail_controller</members>
+        <members>PrintCustomObject20Page</members>
+        <members>PrintCustomObject22Page</members>
+        <members>PrintPage</members>
+        <members>QATree</members>
+        <members>QAdetail</members>
+        <members>SiteFileBrowser</members>
+        <members>SiteLogin</members>
+        <members>SiteRegister</members>
+        <members>SiteRegisterConfirm</members>
+        <members>SiteTemplate</members>
+        <members>StdExceptionTemplate</members>
+        <members>SubmitPage</members>
+        <members>TestPage</members>
+        <members>Unauthorized</members>
+        <members>UnderConstruction</members>
+        <members>WorkPlanTNextWeekPage</members>
+        <members>WorkPlanTNextWeekPageMobile</members>
+        <members>WorkPlanThisWeekPage</members>
+        <members>WorkPlanThisWeekPageMobile</members>
+        <members>vfalert</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>AccTrigger</members>
+        <members>AccountAfterTrigger</members>
+        <members>AccountName</members>
+        <members>AccountProductLineTrigger</members>
+        <members>AccountTeamsTrigger</members>
+        <members>AccountZFZTrigger</members>
+        <members>AttErrorTrigger</members>
+        <members>AttachmentCusOb20Trigger</members>
+        <members>AttachmentTrigger</members>
+        <members>BXAttachmentTrigger</members>
+        <members>BussinessCodeTrigger</members>
+        <members>BussniessAreaTrigger</members>
+        <members>CaseTrainTrigger</members>
+        <members>CasegcsTrigger</members>
+        <members>CompleteTime</members>
+        <members>ConfigureTrigger</members>
+        <members>ContractAfterTrigger</members>
+        <members>ContractFinalNameTrigger</members>
+        <members>ContractTrigger</members>
+        <members>CustomLevelTrigger</members>
+        <members>CustomObject4</members>
+        <members>CustomerFirstManagementTrigger</members>
+        <members>CustomerThreeTrigger</members>
+        <members>Equipment</members>
+        <members>EventAccountTrigger</members>
+        <members>EventOnAccount</members>
+        <members>InstallReportEmail</members>
+        <members>IntermediateTableTrigger</members>
+        <members>NewWorkTrigger</members>
+        <members>OppAmountTrigger</members>
+        <members>OppAmountTrigger2</members>
+        <members>OppPusher</members>
+        <members>OpportunityAccountNameTrigger</members>
+        <members>OpportunityAfterTrigger</members>
+        <members>OpportunityCloseTimeTrigger</members>
+        <members>OpportunityLineTrigger</members>
+        <members>OpportunityRecord2Trigger</members>
+        <members>OpportunityRecord3Trigger</members>
+        <members>OpportunityRecordTrigger</members>
+        <members>OpportunityStatusTrigger</members>
+        <members>OrderAfterTrigger</members>
+        <members>PrintTrigger</members>
+        <members>ProductLineTrigger</members>
+        <members>SalesWeeklyReportAfterTrigger</members>
+        <members>SalesWeeklyReportBeforeTrigger</members>
+        <members>ServiceCreatedDateTrigger</members>
+        <members>ServiceGroup</members>
+        <members>ServiceReportEmail</members>
+        <members>ServiceTrigger</members>
+        <members>Warranty</members>
+        <members>Warrantyproduct</members>
+        <members>WarrentyContractBeforeTrigger</members>
+        <members>installreport</members>
+        <members>outinstock</members>
+        <members>packingInTrigger</members>
+        <members>pollingTrigger</members>
+        <members>servicereport</members>
+        <members>sparepart</members>
+        <members>sparepartdetail</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>CustomApplication</members>
+        <members>CustomApplication1</members>
+        <members>SalesManagement</members>
+        <members>lcpx</members>
+        <members>standard__AllTabSet</members>
+        <members>standard__AppLauncher</members>
+        <members>standard__Chatter</members>
+        <members>standard__Community</members>
+        <members>standard__LightningInstrumentation</members>
+        <members>standard__LightningSales</members>
+        <members>standard__LightningSalesConsole</members>
+        <members>standard__LightningService</members>
+        <members>standard__Marketing</members>
+        <members>standard__Platform</members>
+        <members>standard__Sales</members>
+        <members>standard__Service</members>
+        <members>standard__ServiceConsole</members>
+        <members>swkg</members>
+        <members>tecservice</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>CustomLabels</members>
+        <name>CustomLabels</name>
+    </types>
+    <types>
+        <members>Accessories__c</members>
+        <members>Account</members>
+        <members>AccountContactRole</members>
+        <members>Activity</members>
+        <members>Address</members>
+        <members>Asset</members>
+        <members>AssetRelationship</members>
+        <members>AssignedResource</members>
+        <members>AssistantProgress</members>
+        <members>AssociatedLocation</members>
+        <members>BackupMachineResources__c</members>
+        <members>BatchUpdateAccountTeam__c</members>
+        <members>Campaign</members>
+        <members>CampaignMember</members>
+        <members>Case</members>
+        <members>CaseContactRole</members>
+        <members>CluesPool__c</members>
+        <members>CollaborationGroup</members>
+        <members>CollaborationGroupMember</members>
+        <members>ConfigurationList__c</members>
+        <members>Contact</members>
+        <members>ContentVersion</members>
+        <members>Contract</members>
+        <members>ContractContactRole</members>
+        <members>CustomObject10__c</members>
+        <members>CustomObject11__c</members>
+        <members>CustomObject12__c</members>
+        <members>CustomObject13__c</members>
+        <members>CustomObject14__c</members>
+        <members>CustomObject15__c</members>
+        <members>CustomObject16__c</members>
+        <members>CustomObject17__c</members>
+        <members>CustomObject18__c</members>
+        <members>CustomObject19__c</members>
+        <members>CustomObject1__c</members>
+        <members>CustomObject20__c</members>
+        <members>CustomObject21__c</members>
+        <members>CustomObject22__c</members>
+        <members>CustomObject24__c</members>
+        <members>CustomObject25__c</members>
+        <members>CustomObject4__c</members>
+        <members>CustomObject5__c</members>
+        <members>CustomObject6__c</members>
+        <members>CustomObject7__c</members>
+        <members>CustomObject8__c</members>
+        <members>CustomerAssets__c</members>
+        <members>CustomerFirstManagement__c</members>
+        <members>DeliveryInformation__c</members>
+        <members>DigitalSignature</members>
+        <members>DuplicateRecordItem</members>
+        <members>DuplicateRecordSet</members>
+        <members>EmailMessage</members>
+        <members>Equipment__c</members>
+        <members>Event</members>
+        <members>ExchangeUserMapping</members>
+        <members>ExtendedOrder__c</members>
+        <members>ExtendedWarrantyProduct__c</members>
+        <members>FSL__FSL_Operation__c</members>
+        <members>FSL__Gantt_Filter__c</members>
+        <members>FSL__Optimization_Data__c</members>
+        <members>FSL__Optimization_Request__c</members>
+        <members>FSL__Polygon__c</members>
+        <members>FSL__SLR_Cache__c</members>
+        <members>FSL__Scheduling_Policy_Goal__c</members>
+        <members>FSL__Scheduling_Policy_Work_Rule__c</members>
+        <members>FSL__Scheduling_Policy__c</members>
+        <members>FSL__Service_Goal__c</members>
+        <members>FSL__Territory_Optimization_Request__c</members>
+        <members>FSL__Time_Dependency__c</members>
+        <members>FSL__UserSetting__c</members>
+        <members>FSL__User_Setting_Territory__c</members>
+        <members>FSL__User_Territory__c</members>
+        <members>FSL__Work_Rule__c</members>
+        <members>FYSQD__c</members>
+        <members>FailedSpareParts__c</members>
+        <members>FeedItem</members>
+        <members>ForecastingAdjustment</members>
+        <members>ForecastingCategoryMapping</members>
+        <members>ForecastingOwnerAdjustment</members>
+        <members>ForecastingQuota</members>
+        <members>ForecastingTypeToCategory</members>
+        <members>Host__c</members>
+        <members>Idea</members>
+        <members>IntermediateTable__c</members>
+        <members>Lead</members>
+        <members>Lnvoice__c</members>
+        <members>LoadingCondition__c</members>
+        <members>Location</members>
+        <members>Macro</members>
+        <members>MacroAction</members>
+        <members>MacroInstruction</members>
+        <members>MaintenanceAsset</members>
+        <members>MaintenancePlan</members>
+        <members>MerchandiseNews__c</members>
+        <members>NameToCode__c</members>
+        <members>OperatingHours</members>
+        <members>Opportunity</members>
+        <members>OpportunityCompetitor</members>
+        <members>OpportunityCondition__c</members>
+        <members>OpportunityContactRole</members>
+        <members>OpportunityLineItem</members>
+        <members>OpportunityTeamMember</members>
+        <members>OptionalAccessories__c</members>
+        <members>Order</members>
+        <members>OrderItem</members>
+        <members>PMMA__c</members>
+        <members>PartnerRole</members>
+        <members>PaymentCondition__c</members>
+        <members>PaymentMethod__c</members>
+        <members>Presentation__c</members>
+        <members>Pricebook2</members>
+        <members>PricebookEntry</members>
+        <members>Problem__c</members>
+        <members>Product2</members>
+        <members>Product3__c</members>
+        <members>ProductConsumed</members>
+        <members>ProductItem</members>
+        <members>ProductItemTransaction</members>
+        <members>ProductRequest</members>
+        <members>ProductRequestLineItem</members>
+        <members>ProductRequired</members>
+        <members>ProductTransfer</members>
+        <members>QuickText</members>
+        <members>Quote</members>
+        <members>QuoteLineItem</members>
+        <members>RecordAction</members>
+        <members>RegularSpare__c</members>
+        <members>RequestsForAccessSIQ</members>
+        <members>ResourceAbsence</members>
+        <members>ResourcePreference</members>
+        <members>ReturnDetails__c</members>
+        <members>ReturnOrder</members>
+        <members>ReturnOrderLineItem</members>
+        <members>Review__c</members>
+        <members>SalesOrg2Code__c</members>
+        <members>SalesWeeklyReport__c</members>
+        <members>Scorecard</members>
+        <members>ScorecardAssociation</members>
+        <members>ScorecardMetric</members>
+        <members>ServiceAppointment</members>
+        <members>ServiceCrew</members>
+        <members>ServiceCrewMember</members>
+        <members>ServiceResource</members>
+        <members>ServiceResourceCapacity</members>
+        <members>ServiceResourceSkill</members>
+        <members>ServiceTerritory</members>
+        <members>ServiceTerritoryLocation</members>
+        <members>ServiceTerritoryMember</members>
+        <members>SharingOpportunity__c</members>
+        <members>Shipment</members>
+        <members>ShippingRequistion__c</members>
+        <members>Site</members>
+        <members>SkillRequirement</members>
+        <members>SocialPersona</members>
+        <members>SocialPost</members>
+        <members>Solution</members>
+        <members>SpareProduct__c</members>
+        <members>StandbyApplication__c</members>
+        <members>Storemission__c</members>
+        <members>StreamActivityAccess</members>
+        <members>StreamingChannel</members>
+        <members>SuperiorFeedback__c</members>
+        <members>Survey</members>
+        <members>SurveyInvitation</members>
+        <members>SurveyPage</members>
+        <members>SurveyQuestion</members>
+        <members>SurveyQuestionChoice</members>
+        <members>SurveyQuestionResponse</members>
+        <members>SurveyResponse</members>
+        <members>SurveyVersion</members>
+        <members>Task</members>
+        <members>TechnicalOrderProduct__c</members>
+        <members>TechnicalOrderrPoduct__c</members>
+        <members>TechnicalService__c</members>
+        <members>TechnologyFile__c</members>
+        <members>TheRequiredAccessories__c</members>
+        <members>TimeSheet</members>
+        <members>TimeSheetEntry</members>
+        <members>TimeSlot</members>
+        <members>Topic</members>
+        <members>TopicAssignment</members>
+        <members>TravelRequest__c</members>
+        <members>URLConfig__c</members>
+        <members>User</members>
+        <members>UserProvisioningRequest</members>
+        <members>UserSettings__c</members>
+        <members>VisitThisWeek__c</members>
+        <members>Warranty__c</members>
+        <members>Warrantyproduct__c</members>
+        <members>Weekly__c</members>
+        <members>WorkOrder</members>
+        <members>WorkOrderLineItem</members>
+        <members>WorkPlan__c</members>
+        <members>WorkType</members>
+        <members>certificate__c</members>
+        <members>chance__c</members>
+        <members>chanceproduct__c</members>
+        <members>clinictrain__c</members>
+        <members>daily__c</members>
+        <members>faultcategory__c</members>
+        <members>gcsdagl__c</members>
+        <members>installreport__c</members>
+        <members>is2SalesFunnel__ISConfiguration__c</members>
+        <members>knowledgecontent__c</members>
+        <members>knowledgetype__c</members>
+        <members>kucun__c</members>
+        <members>outinstock__c</members>
+        <members>personpx__c</members>
+        <members>pmmatest__c</members>
+        <members>polling__c</members>
+        <members>product__c</members>
+        <members>promotion__c</members>
+        <members>registrationcode__c</members>
+        <members>roomreport__c</members>
+        <members>servicegroup__c</members>
+        <members>servicereport__c</members>
+        <members>servicerequest__c</members>
+        <members>sparepart__c</members>
+        <members>sparepartdetail__c</members>
+        <members>stock__c</members>
+        <members>test__c</members>
+        <members>training__c</members>
+        <members>trainmanagement__c</members>
+        <members>traisummary__c</members>
+        <members>ywjhzjbsj__c</members>
+        <members>zb__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>BackupMachineResources__c</members>
+        <members>CluesPool__c</members>
+        <members>ConfigurationList__c</members>
+        <members>CustomObject10__c</members>
+        <members>CustomObject11__c</members>
+        <members>CustomObject12__c</members>
+        <members>CustomObject13__c</members>
+        <members>CustomObject14__c</members>
+        <members>CustomObject15__c</members>
+        <members>CustomObject18__c</members>
+        <members>CustomObject1__c</members>
+        <members>CustomObject20__c</members>
+        <members>CustomObject22__c</members>
+        <members>CustomObject24__c</members>
+        <members>CustomObject25__c</members>
+        <members>CustomObject4__c</members>
+        <members>CustomObject5__c</members>
+        <members>CustomerAssets__c</members>
+        <members>Equipment__c</members>
+        <members>ExtendedWarrantyProduct__c</members>
+        <members>Host__c</members>
+        <members>IntermediateTable__c</members>
+        <members>Knowledge</members>
+        <members>OptionalAccessories__c</members>
+        <members>Presentation__c</members>
+        <members>Product3__c</members>
+        <members>RegularSpare__c</members>
+        <members>Review__c</members>
+        <members>SalesWeeklyReport__c</members>
+        <members>ShippingRequistion__c</members>
+        <members>SpareProduct__c</members>
+        <members>StandbyApplication__c</members>
+        <members>Storemission__c</members>
+        <members>TechnicalService__c</members>
+        <members>TechnologyFile__c</members>
+        <members>TheRequiredAccessories__c</members>
+        <members>TravelRequest__c</members>
+        <members>VisitThisWeek__c</members>
+        <members>Warranty__c</members>
+        <members>Warrantyproduct__c</members>
+        <members>Weekly__c</members>
+        <members>chance__c</members>
+        <members>chanceproduct__c</members>
+        <members>clinictrain__c</members>
+        <members>daily__c</members>
+        <members>faultcategory__c</members>
+        <members>gcsdagl__c</members>
+        <members>installreport__c</members>
+        <members>knowledgecontent__c</members>
+        <members>knowledgetype__c</members>
+        <members>kucun__c</members>
+        <members>outinstock__c</members>
+        <members>pmmatest__c</members>
+        <members>polling__c</members>
+        <members>product__c</members>
+        <members>promotion__c</members>
+        <members>registrationcode__c</members>
+        <members>roomreport__c</members>
+        <members>servicegroup__c</members>
+        <members>servicereport__c</members>
+        <members>servicerequest__c</members>
+        <members>sparepart__c</members>
+        <members>sparepartdetail__c</members>
+        <members>stock__c</members>
+        <members>trainmanagement__c</members>
+        <members>traisummary__c</members>
+        <members>ywjhzjbsj__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>newservicerequesttime</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>EditQuotas</members>
+        <members>FSL</members>
+        <members>is2SalesFunnel</members>
+        <members>sf_chttr_apps</members>
+        <members>sf_com_apps</members>
+        <members>sf_fieldservice</members>
+        <members>sfadminapps</members>
+        <name>InstalledPackage</name>
+    </types>
+    <types>
+        <members>Accessories__c-配件产品 布局</members>
+        <members>Account-Account Layout</members>
+        <members>Account-代理商-销售</members>
+        <members>Account-代理商页面布局</members>
+        <members>Account-客户-销售</members>
+        <members>AccountTeamMember-客户小组成员 布局</members>
+        <members>Address-Address Layout</members>
+        <members>Asset-Asset Layout</members>
+        <members>AssignedResource-Assigned Resource Layout</members>
+        <members>AssociatedLocation-Associated Location Layout</members>
+        <members>BackupMachineResources__c-备用机资源 布局</members>
+        <members>Campaign-Campaign Layout</members>
+        <members>CampaignMember-Campaign Member Page Layout</members>
+        <members>Case-Case Layout</members>
+        <members>Case-合同安装</members>
+        <members>Case-备用机服务工作</members>
+        <members>Case-年度保养</members>
+        <members>Case-手术室环境评估</members>
+        <members>Case-技术服务</members>
+        <members>Case-技术服务支持</members>
+        <members>Case-故障报修</members>
+        <members>Case-样机安装</members>
+        <members>Case-维修维护</members>
+        <members>CaseClose-Close Case Layout</members>
+        <members>CluesPool__c-线索池 布局</members>
+        <members>CollaborationGroup-小组 布局</members>
+        <members>ConfigurationList__c-库存布局</members>
+        <members>ConfigurationList__c-配置单 布局</members>
+        <members>Contact-Contact Layout</members>
+        <members>Contact-代理商联系人</members>
+        <members>ContentVersion-内容版本 布局</members>
+        <members>Contract-Contract Layout</members>
+        <members>CustomObject10__c-工具 布局</members>
+        <members>CustomObject11__c-工具盘点记录 布局</members>
+        <members>CustomObject12__c-工具明细 布局</members>
+        <members>CustomObject13__c-工具采购 布局</members>
+        <members>CustomObject14__c-工程师职级评分表E1 布局</members>
+        <members>CustomObject14__c-工程师职级评分表E2 布局</members>
+        <members>CustomObject14__c-工程师职级评分表E3 布局</members>
+        <members>CustomObject14__c-工程师职级评分表E4 布局</members>
+        <members>CustomObject14__c-工程师职级评分表E5 布局</members>
+        <members>CustomObject15__c-工程师职级申报表 布局</members>
+        <members>CustomObject16__c-丢单详情 布局</members>
+        <members>CustomObject17__c-产品明细 布局</members>
+        <members>CustomObject18__c-大型-产品</members>
+        <members>CustomObject18__c-销售机会产品 布局</members>
+        <members>CustomObject19__c-成交阶段汇总金额数据 布局</members>
+        <members>CustomObject1__c-手术量 布局</members>
+        <members>CustomObject20__c-单次维修 布局</members>
+        <members>CustomObject21__c-欧堡月检查量%EF%BC%88人%EF%BC%89 布局</members>
+        <members>CustomObject22__c-保修合同 布局</members>
+        <members>CustomObject24__c-常规技术报告 布局</members>
+        <members>CustomObject24__c-探头故障报告</members>
+        <members>CustomObject24__c-配件故障报告</members>
+        <members>CustomObject25__c-新建发货产品 布局</members>
+        <members>CustomObject4__c-一般行动%EF%BC%88常规技术%EF%BC%89</members>
+        <members>CustomObject4__c-项目进展记录 布局</members>
+        <members>CustomObject5__c-检查量 布局</members>
+        <members>CustomObject6__c-绩效考核管理 布局</members>
+        <members>CustomObject7__c-工程师奖罚管理 布局</members>
+        <members>CustomObject8__c-业务机会出差申请 布局</members>
+        <members>CustomerAssets__c-准分子</members>
+        <members>CustomerAssets__c-客户资产 布局</members>
+        <members>CustomerAssets__c-常规</members>
+        <members>CustomerAssets__c-欧堡</members>
+        <members>CustomerAssets__c-飞白</members>
+        <members>CustomerFirstManagement__c-客户首营信息 Layout</members>
+        <members>DeliveryInformation__c-发货信息 Layout</members>
+        <members>DuplicateRecordSet-Duplicate Record Set Layout</members>
+        <members>EmailMessage-电子邮件消息 布局</members>
+        <members>Equipment__c-准分子检查设备布局</members>
+        <members>Equipment__c-常规客户资产</members>
+        <members>Equipment__c-欧堡设备 布局</members>
+        <members>Equipment__c-设备 布局</members>
+        <members>Equipment__c-非我司客户资产</members>
+        <members>Equipment__c-飞白设备</members>
+        <members>Event-Event Layout</members>
+        <members>Event-KOL客户拜访系统</members>
+        <members>Event-一般行动%EF%BC%88常规技术%EF%BC%89</members>
+        <members>Event-商机销售活动</members>
+        <members>Event-项目进展记录</members>
+        <members>ExtendedOrder__c-延保订单 布局</members>
+        <members>ExtendedWarrantyProduct__c-延保配件 布局</members>
+        <members>FYSQD__c-费用申请单 布局</members>
+        <members>FailedSpareParts__c-故障备件 Layout</members>
+        <members>FeedItem-Feed Item Layout</members>
+        <members>Global-Global Layout</members>
+        <members>Global-newLayout</members>
+        <members>Host__c-主机 布局</members>
+        <members>Idea-Idea Layout</members>
+        <members>IntermediateTable__c-中间表对象 布局</members>
+        <members>Lead-Lead Layout</members>
+        <members>ListEmail-List Email Layout</members>
+        <members>Lnvoice__c-发票申请 布局</members>
+        <members>LoadingCondition__c-装机情况 布局</members>
+        <members>Location-Location Layout</members>
+        <members>Macro-Macro Layout</members>
+        <members>MaintenanceAsset-Maintenance Asset Layout</members>
+        <members>MaintenancePlan-Maintenance Plan Layout</members>
+        <members>MerchandiseNews__c-商品信息 布局</members>
+        <members>OperatingHours-FSL Operating Hours Layout</members>
+        <members>OperatingHours-Operating Hours Layout</members>
+        <members>Opportunity-Opportunity Layout</members>
+        <members>Opportunity-admin pagelayout</members>
+        <members>Opportunity-保修销售</members>
+        <members>Opportunity-大型屈光销售机会</members>
+        <members>Opportunity-大型屈光销售机会%EF%BC%88大区经理%EF%BC%89</members>
+        <members>Opportunity-大型欧堡销售机会</members>
+        <members>Opportunity-大型欧堡销售机会%EF%BC%88大区经理%EF%BC%89</members>
+        <members>Opportunity-常规保修销售</members>
+        <members>Opportunity-常规销售机会</members>
+        <members>Opportunity-常规销售机会%EF%BC%88大区经理%EF%BC%89</members>
+        <members>Opportunity-选配组件</members>
+        <members>Opportunity-预测用常规销售机会</members>
+        <members>OpportunityCondition__c-签单情况 Layout</members>
+        <members>OpportunityLineItem-Opportunity Product Layout</members>
+        <members>OpportunityTeamMember-Opportunity Team Member Layout</members>
+        <members>OptionalAccessories__c-可选配件 布局</members>
+        <members>Order-Order Layout</members>
+        <members>Order-寄存销售</members>
+        <members>Order-技术服务保修销售</members>
+        <members>Order-技术服务延保销售</members>
+        <members>Order-技术服务维修销售</members>
+        <members>Order-技术耗材销售</members>
+        <members>Order-技术配件销售</members>
+        <members>Order-耗品销售</members>
+        <members>Order-耗材销售</members>
+        <members>Order-设备内贸销售</members>
+        <members>Order-设备外贸销售</members>
+        <members>Order-设备租赁</members>
+        <members>OrderItem-Order Product Layout</members>
+        <members>PMMA__c-PMMA测试 布局</members>
+        <members>PaymentCondition__c-回款情况 Layout</members>
+        <members>PaymentMethod__c-付款方式 布局</members>
+        <members>Presentation__c-报告 布局</members>
+        <members>Pricebook2-Price Book Layout</members>
+        <members>PricebookEntry-Price Book Entry</members>
+        <members>Problem__c-其它疑难问题 布局</members>
+        <members>Product2-Product Layout</members>
+        <members>Product2-大型产品</members>
+        <members>Product2-常规产品</members>
+        <members>Product3__c-产品%EF%BC%88配置单产品%EF%BC%89 布局</members>
+        <members>ProductConsumed-Product Consumed Layout</members>
+        <members>ProductItem-Product Item Layout</members>
+        <members>ProductItemTransaction-Product Item Transaction Layout</members>
+        <members>ProductRequest-Product Request Layout</members>
+        <members>ProductRequestLineItem-Product Request Line Item Layout</members>
+        <members>ProductRequired-Product Required Layout</members>
+        <members>ProductTransfer-Product Transfer Layout</members>
+        <members>QuickText-快速文本布局</members>
+        <members>Quote-报价布局</members>
+        <members>QuoteLineItem-报价行项目布局</members>
+        <members>RegularSpare__c-常规备件申请 布局</members>
+        <members>ResourceAbsence-FSL Resource Absence Layout</members>
+        <members>ResourceAbsence-Resource Absence Layout</members>
+        <members>ResourcePreference-Resource Preference Layout</members>
+        <members>ReturnDetails__c-回款明细 布局</members>
+        <members>ReturnOrder-Return Order Layout</members>
+        <members>ReturnOrderLineItem-Return Order Line Item Layout</members>
+        <members>Review__c-回访信息 布局</members>
+        <members>SalesWeeklyReport__c-销售周报 Layout</members>
+        <members>Scorecard-Scorecard Layout</members>
+        <members>ScorecardAssociation-Scorecard Association Layout</members>
+        <members>ScorecardMetric-Scorecard Metric Layout</members>
+        <members>ServiceAppointment-FSL Service Appointment Layout</members>
+        <members>ServiceAppointment-Service Appointment Layout</members>
+        <members>ServiceCrew-Service Crew Layout</members>
+        <members>ServiceCrewMember-Service Crew Member Layout</members>
+        <members>ServiceResource-FSL Service Resource Layout</members>
+        <members>ServiceResource-Service Resource Layout</members>
+        <members>ServiceResourceCapacity-Resource Capacity Layout</members>
+        <members>ServiceResourceSkill-Service Resource Skill Layout</members>
+        <members>ServiceTerritory-Service Territory Layout</members>
+        <members>ServiceTerritoryLocation-服务区域位置 布局</members>
+        <members>ServiceTerritoryMember-Service Territory Member Layout</members>
+        <members>Shipment-Shipment Layout</members>
+        <members>ShippingRequistion__c-发货申请单 布局</members>
+        <members>ShippingRequistion__c-含欧堡发货申请单</members>
+        <members>SkillRequirement-Skill Requirement Layout</members>
+        <members>SocialPersona-Social Persona Layout</members>
+        <members>SocialPost-Social Post Layout</members>
+        <members>Solution-Solution Layout</members>
+        <members>SpareProduct__c-备件产品 Layout</members>
+        <members>StandbyApplication__c-备用机申请表单 布局</members>
+        <members>Storemission__c-准分子设备布局</members>
+        <members>Storemission__c-检查设备页面布局</members>
+        <members>Storemission__c-飞白设备布局</members>
+        <members>SuperiorFeedback__c-上级反馈 布局</members>
+        <members>Task-Task Layout</members>
+        <members>TechnicalOrderProduct__c-技术订单产品%EF%BC%88配件%EF%BC%89 布局</members>
+        <members>TechnicalOrderrPoduct__c-技术订单产品 布局</members>
+        <members>TechnicalService__c-技术服务 布局</members>
+        <members>TechnologyFile__c-技术资料 布局</members>
+        <members>TheRequiredAccessories__c-必选配件 布局</members>
+        <members>TimeSheet-Time Sheet Layout</members>
+        <members>TimeSheetEntry-Time Sheet Entry Layout</members>
+        <members>TimeSlot-Time Slot Layout</members>
+        <members>TravelRequest__c-业务机会 出差申请</members>
+        <members>TravelRequest__c-出差申请 布局</members>
+        <members>User-User Layout</members>
+        <members>UserAlt-用户简档 布局</members>
+        <members>VisitThisWeek__c-本周拜访情况 布局</members>
+        <members>Warranty__c-保修合约 布局</members>
+        <members>Warrantyproduct__c-合约产品 布局</members>
+        <members>Warrantyproduct__c-欧堡及检查设备合约产品布局</members>
+        <members>Weekly__c-周报 布局</members>
+        <members>Weekly__c-销售周报布局</members>
+        <members>WorkOrder-FSL Work Order Layout</members>
+        <members>WorkOrder-Work Order Layout</members>
+        <members>WorkOrder-产品培训卡</members>
+        <members>WorkOrder-准分子检查设备</members>
+        <members>WorkOrder-准分子设备</members>
+        <members>WorkOrder-合同安装单</members>
+        <members>WorkOrder-售前支持</members>
+        <members>WorkOrder-备用机-准分子</members>
+        <members>WorkOrder-备用机-检查设备</members>
+        <members>WorkOrder-技术服务工作单%28常规%29</members>
+        <members>WorkOrder-欧堡设备</members>
+        <members>WorkOrder-路视设备</members>
+        <members>WorkOrder-飞白设备</members>
+        <members>WorkOrderLineItem-FSL Work Order Line Item Layout</members>
+        <members>WorkOrderLineItem-Work Order Line Item Layout</members>
+        <members>WorkPlan__c-工作情况 Layout</members>
+        <members>WorkType-FSL Work Type Layout</members>
+        <members>WorkType-Work Type Layout</members>
+        <members>certificate__c-资质文件对象 布局</members>
+        <members>chance__c-业务机会 布局</members>
+        <members>chance__c-备件业务机会 布局</members>
+        <members>chanceproduct__c-业务机会产品 布局</members>
+        <members>clinictrain__c-临床培训 布局</members>
+        <members>daily__c-日报 布局</members>
+        <members>faultcategory__c-故障类别 布局</members>
+        <members>gcsdagl__c-工程师档案管理 布局</members>
+        <members>installreport__c-安装报告 布局</members>
+        <members>installreport__c-安装确认单 布局</members>
+        <members>installreport__c-欧堡安装报告</members>
+        <members>installreport__c-飞白安装报告</members>
+        <members>knowledgecontent__c-知识库内容 布局</members>
+        <members>knowledgetype__c-知识库类型 布局</members>
+        <members>kucun__c-库存 布局</members>
+        <members>outinstock__c-入库 布局</members>
+        <members>outinstock__c-出入库 布局</members>
+        <members>personpx__c-培训人 布局</members>
+        <members>personpx__c-常规培训人布局</members>
+        <members>pmmatest__c-PMMA 布局</members>
+        <members>polling__c-巡检 布局</members>
+        <members>polling__c-常规巡检</members>
+        <members>product__c-%23产品 布局</members>
+        <members>product__c-产品 布局</members>
+        <members>promotion__c-工程师职级晋升历史 布局</members>
+        <members>registrationcode__c-注册码 布局</members>
+        <members>roomreport__c-手术室评估 布局</members>
+        <members>roomreport__c-飞白手术室评估</members>
+        <members>servicegroup__c-服务小组 布局</members>
+        <members>servicereport__c-准分子检查设备技术服务报告 布局</members>
+        <members>servicereport__c-售前支持布局</members>
+        <members>servicereport__c-备用机-准分子  布局</members>
+        <members>servicereport__c-备用机-检查设备 布局</members>
+        <members>servicereport__c-技术服务报告 布局</members>
+        <members>servicereport__c-欧堡设备技术服务报告 布局</members>
+        <members>servicereport__c-路视设备技术服务报告布局</members>
+        <members>servicereport__c-飞白技术服务报告 布局</members>
+        <members>servicerequest__c-升级布局new</members>
+        <members>servicerequest__c-售前支持布局</members>
+        <members>servicerequest__c-备用机服务工作</members>
+        <members>servicerequest__c-巡检布局new</members>
+        <members>servicerequest__c-手术室环境评估布局</members>
+        <members>servicerequest__c-故障报修 布局</members>
+        <members>servicerequest__c-服务请求 布局</members>
+        <members>servicerequest__c-设备安装布局</members>
+        <members>sparepart__c-备件申请 布局</members>
+        <members>sparepart__c-备件申请-更新布局</members>
+        <members>sparepart__c-常规备件申请</members>
+        <members>sparepartdetail__c-备件明细 布局</members>
+        <members>stock__c-库存 布局</members>
+        <members>test__c-test 布局</members>
+        <members>training__c-工程师培训 布局</members>
+        <members>trainmanagement__c-培训管理 布局</members>
+        <members>trainmanagement__c-常规培训管理</members>
+        <members>traisummary__c-培训总结 布局</members>
+        <members>ywjhzjbsj__c-业务机会中间表数据 布局</members>
+        <members>zb__c-周报 布局</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>SiteSamples</members>
+        <members>blank</members>
+        <members>ckeditor</members>
+        <members>dhtmlxcommon</members>
+        <members>dhtmlxtreecss</members>
+        <members>folderClosed</members>
+        <members>folderOpen</members>
+        <members>iconCheckAll</members>
+        <members>iconCheckDis</members>
+        <members>iconCheckGray</members>
+        <members>iconUncheckAll</members>
+        <members>iconUncheckDis</members>
+        <members>jquery</members>
+        <members>leaf</members>
+        <members>line1</members>
+        <members>line2</members>
+        <members>line3</members>
+        <members>line4</members>
+        <members>minus</members>
+        <members>minus2</members>
+        <members>minus3</members>
+        <members>minus4</members>
+        <members>minus5</members>
+        <members>pdflogo</members>
+        <members>plus</members>
+        <members>plus2</members>
+        <members>plus3</members>
+        <members>plus4</members>
+        <members>plus5</members>
+        <members>radio_off</members>
+        <members>radio_on</members>
+        <members>rights</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
+        <members>Account</members>
+        <members>Case</members>
+        <members>Contract</members>
+        <members>CustomObject18__c</members>
+        <members>CustomObject1__c</members>
+        <members>CustomObject20__c</members>
+        <members>CustomObject22__c</members>
+        <members>CustomObject24__c</members>
+        <members>CustomerFirstManagement__c</members>
+        <members>Equipment__c</members>
+        <members>Lead</members>
+        <members>Opportunity</members>
+        <members>Order</members>
+        <members>Presentation__c</members>
+        <members>RegularSpare__c</members>
+        <members>StandbyApplication__c</members>
+        <members>TravelRequest__c</members>
+        <members>Warranty__c</members>
+        <members>Weekly__c</members>
+        <members>installreport__c</members>
+        <members>outinstock__c</members>
+        <members>pmmatest__c</members>
+        <members>polling__c</members>
+        <members>roomreport__c</members>
+        <members>servicereport__c</members>
+        <members>servicerequest__c</members>
+        <members>sparepart__c</members>
+        <members>sparepartdetail__c</members>
+        <members>stock__c</members>
+        <members>trainmanagement__c</members>
+        <members>traisummary__c</members>
+        <name>Workflow</name>
+    </types>
+    <version>43.0</version>
+</Package>

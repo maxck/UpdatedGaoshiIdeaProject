@@ -1,0 +1,8 @@
+<apex:page standardController="Contract" docType="html-5.0">
+    <style type="text/css">
+    p{
+        COLOR: red
+        }
+    </style>
+    <p>请注意销售机会客户名和签约客户名是否一致!!!</p>
+</apex:page>

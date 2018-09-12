@@ -1,0 +1,40 @@
+<apex:page extensions="WorkPlanThisWeek" standardController="SalesWeeklyReport__c">
+  <apex:form >     
+        <apex:pageBlock >
+          <apex:pageBlockTable value="{!AllEvents}" var="currentActivity">
+            <apex:column headerValue="{!$ObjectType.WorkPlan__c.Fields.WeekChinese__c.Label}">
+                 <apex:outputText value="{0,date,yyyy-MM-dd}"> <apex:param value="{!currentActivity.ActivityDate__c }" /> </apex:outputText>
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.WorkPlan__c.Fields.Subject__c.Label}">
+                <apex:outputLink value="/{!currentActivity.ActivityId__c}" id="activityId" target="_top">
+                    {!currentActivity.Subject__c}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.WorkPlan__c.Fields.OpportunityActivityTheme__c.Label}">
+                <apex:outputLink value="/{!currentActivity.OpportunityActivityTheme__c}" id="OpportunityActivityTheme" target="_top">
+                    {!currentActivity.OpportunityActivityTheme__c}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.WorkPlan__c.Fields.ActivityDescription__c.Label}">
+                {!currentActivity.ActivityDescription__c}
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.WorkPlan__c.Fields.AccountName__c.Label}">
+                <apex:outputLink value="/{!currentActivity.AccountName__c}" id="accountid" target="_top">
+                    {!currentActivity.AccountName__r.name}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.WorkPlan__c.Fields.contact__c.Label}">
+                <apex:outputLink value="/{!currentActivity.contact__c}" id="oppId" target="_top">
+                    {!currentActivity.contact__r.name}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.WorkPlan__c.Fields.NeedSupport__c.Label}">
+                {!currentActivity.NeedSupport__c}
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.WorkPlan__c.Fields.CompletionStatus__c.Label}">
+                {!currentActivity.CompletionStatus__c}
+            </apex:column>
+          </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

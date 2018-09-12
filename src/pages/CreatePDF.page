@@ -1,0 +1,311 @@
+<!-- 技术服务报告打印模板  --> 
+ <apex:page renderAs="pdf" controller="Ctr_CreatePDF_ServiceReport"  >
+ <html>
+    <head>
+        <style>
+            body {font-family: Arial Unicode MS;}
+            #d2{
+            width:330px;
+            height:60px;
+            border:1px solid black;
+            position:relative;
+            margin-top:-70px;
+            margin-left:380px;
+            font-size:10px;
+            }
+            #topright{
+            margin-top:5px;
+            margin-left:8px;
+            }
+            #dline{
+            margin-top:8px;
+            }
+            #line td{
+            line-height:25px;
+            margin-left:5px;
+            }
+            #dtable{
+            margin-top:12px;
+            }
+            #tb{
+            line-height:15px;
+            }
+            #fonts{
+            border:0px solid red;
+            margin-top:2px;
+            font-size:11px;
+            }
+            #changetable{
+            margin-top:10px;
+            }
+            .client{
+            margin-top:6px;
+            }
+            .end{
+            margin-top:12px;
+            line-height:16px;
+            }
+        </style>
+    </head>
+    
+<body>
+<div id="d1">
+  <table id="header" style="font-size:22px">
+    <tr>
+      <td><apex:image url="{!$Resource.pdflogo}"/></td>
+    </tr>
+    <tr>
+      <td><b>上海明望公司设备技术服务报告</b></td>
+    </tr>
+    <tr>
+      <td><b>Service Report</b></td>
+    </tr>
+  </table>
+  </div>
+  <div id="d2">
+   <table id="topright" >
+     <tr>
+       <td colspan="2" ><b>北京东城区朝阳门北大街2号港澳中心写字楼618室</b> </td>
+     </tr>
+     <tr>
+       <td  colspan="2">（100027） </td>
+     </tr>
+     <tr>
+       <td>维修热线:010-59792025</td>
+       <td>Fax:010-59792025-821</td>
+     </tr>
+     <!--
+           <tr>
+       <td  colspan="2">北京 Tel:010-59792025</td>
+     </tr>
+     <tr>
+       <td colspan="2">广州 Tel:020-22129965</td>
+     </tr>
+     <tr>
+       <td  colspan="2">上海 Tel:021-64326282</td>
+     </tr>
+     -->
+
+   </table>
+  </div>
+  <div id="dline">
+    <table id="line" style="font-size:11px" cellspacing="0px" cellpadding="0px" >
+    <apex:repeat value="{!wrapp}" var="w">
+    <tr>
+      <td>医院名称:</td>
+      <td colspan="4" style="border-bottom:1px solid black;width:480px"><apex:outputText value="{!w.hospitalName}"></apex:outputText></td>
+    </tr>
+     <tr>
+      <td>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址:</td>
+      <td colspan="5" style="border-bottom:1px solid black"><apex:outputText value="{!w.address}"></apex:outputText></td>
+      <td>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编:</td>
+      <td style="border-bottom:1px solid black;width:140px"><apex:outputText value="{!w.postCode}"></apex:outputText></td>
+    </tr>  
+    <tr>
+      <td>使用科室：</td>
+      <td style="border-bottom:1px solid black;width:120px"><apex:outputText value="{!w.department}"></apex:outputText></td>
+      <td >联系人：</td>
+      <td style="border-bottom:1px solid black;width:120px"><apex:outputText value="{!w.contacts}"></apex:outputText></td>
+      <td >座&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</td>
+      <td style="border-bottom:1px solid black;width:150px"><apex:outputText value="{!w.landline}"></apex:outputText></td>
+      <td >手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</td>
+      <td style="border-bottom:1px solid black;width:100px"><apex:outputText value="{!w.phone}"></apex:outputText></td>
+    </tr>
+    <tr>
+      <td >设备名称:</td>
+      <td colspan="3" style="border-bottom:1px solid black;width:120px"><apex:outputText value="{!w.equipmentname}"></apex:outputText></td>
+      <td >型&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号:</td>
+      <td style="border-bottom:1px solid black;width:50px"><apex:outputText value="{!w.equipmentunittype}"></apex:outputText></td>
+      <td >序&nbsp;&nbsp;&nbsp;列&nbsp;&nbsp;号:</td>
+      <td style="border-bottom:1px solid black;width:100px"><apex:outputText value="{!w.equipment}"></apex:outputText></td>
+    </tr>
+    <tr>
+      <td>服务类型</td>
+      <td colspan="3" style="display:{!If(w.servicetype='故障报修','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>维修&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font style="font-size:13px">口</font>巡检&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font style="font-size:13px">口</font>其他 </td>
+      <td colspan="3" style="display:{!If(w.servicetype='巡检','','none')}"><font style="font-size:13px">口</font>维修&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>巡检&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font style="font-size:13px">口</font>其他 </td>
+      <td colspan="3" style="display:{!If(w.servicetype='升级','','none')}"><font style="font-size:13px">口</font>维修&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font style="font-size:13px">口</font>巡检&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>其他 </td>
+      <td> 出故障日期：</td>
+      <td ><apex:outputText value="{!w.reportdate}"></apex:outputText></td>
+      <td>到达时间：</td>
+      <td ><apex:outputText value="{!w.dotime}"></apex:outputText></td>
+    </tr>
+    </apex:repeat>
+  </table>
+  </div>
+  <div id="dtable">
+   <table id="tb"  style="font-size:11px" cellspacing="0px";cellpadding="0px"; border="1">
+    <apex:repeat value="{!wrapp}" var="w">  
+     <tr>
+       <td style="width:76px;height:38px;text-align:center">故障描述</td>
+       <td colspan="2" style="width:620px;text-align:left">
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="故障类别"></apex:outputText>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!w.bugtype}"></apex:outputText><br/>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="设备报错信息"></apex:outputText>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!w.information}"></apex:outputText>
+       </td>
+     </tr>
+     <tr style="display:{!If(w.types='欧堡设备','none','')}">
+       <td style="height:40px;text-align:center">初始参数</td>
+       <td style="border-right:0px solid black">
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="初始能量测试HF（nm）"></apex:outputText><apex:outputText value="{!w.hfnm}"></apex:outputText><br/>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="初始能量测试HF（mj）"></apex:outputText><apex:outputText value="{!w.hfmj}"></apex:outputText><br/>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="初始能量测试LF（nm）"></apex:outputText><apex:outputText value="{!w.lfnm}"></apex:outputText><br/>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="初始能量测试LF（mj）"></apex:outputText><apex:outputText value="{!w.lfmj}"></apex:outputText><br/>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="初始能量测试HV（V）"></apex:outputText><apex:outputText value="{!w.hvv}"></apex:outputText>
+       </td>
+       <td style="border-left:0px solid black;display:{!If((!ISBLANK(w.nlvsmj)) && (ISBLANK(w.zdnlvsmj)),'','none')}"> 
+          <apex:outputText value="初始最大能量950v10s下（mj）  " style="display:{!If(ISBLANK(w.nlvsmj),'none','')}"></apex:outputText><apex:outputText value="{!w.nlvsmj}"></apex:outputText><br/>
+         <!--  <apex:outputText value="初始最大能量1400v10s下（mj）" ></apex:outputText><apex:outputText value="{!w.zdnlvsmj}"></apex:outputText><br/> -->
+          <apex:outputText value="初始激光腔脉冲数（M）"></apex:outputText><apex:outputText value="{!w.lasernum}"></apex:outputText><br/>
+          <apex:outputText value="初始初级气压（Bar）"></apex:outputText><apex:outputText value="{!w.firstpressure}"></apex:outputText><br/>
+          <apex:outputText value="初始次级气压（mBar）"></apex:outputText><apex:outputText value="{!w.otherpressure}"></apex:outputText><br/> 
+          &nbsp;
+       </td> 
+       
+       <td style="border-left:0px solid black;display:{!If((ISBLANK(w.nlvsmj)) && (!ISBLANK(w.zdnlvsmj)),'','none')}"> 
+         <!--  <apex:outputText value="初始最大能量950v10s下（mj）  " ></apex:outputText><apex:outputText value="{!w.nlvsmj}"></apex:outputText><br/> -->
+          <apex:outputText value="初始最大能量1400v10s下（mj）" ></apex:outputText><apex:outputText value="{!w.zdnlvsmj}"></apex:outputText><br/>
+          <apex:outputText value="初始激光腔脉冲数（M）"></apex:outputText><apex:outputText value="{!w.lasernum}"></apex:outputText><br/>
+          <apex:outputText value="初始初级气压（Bar）"></apex:outputText><apex:outputText value="{!w.firstpressure}"></apex:outputText><br/>
+          <apex:outputText value="初始次级气压（mBar）"></apex:outputText><apex:outputText value="{!w.otherpressure}"></apex:outputText><br/> 
+          &nbsp;
+       </td>  
+       
+       <td style="border-left:0px solid black;display:{!If((!ISBLANK(w.nlvsmj)) && (!ISBLANK(w.zdnlvsmj)),'','none')}"> 
+          <apex:outputText value="初始最大能量950v10s下（mj）  " ></apex:outputText><apex:outputText value="{!w.nlvsmj}"></apex:outputText><br/>
+          <apex:outputText value="初始最大能量1400v10s下（mj）" ></apex:outputText><apex:outputText value="{!w.zdnlvsmj}"></apex:outputText><br/>
+          <apex:outputText value="初始激光腔脉冲数（M）"></apex:outputText><apex:outputText value="{!w.lasernum}"></apex:outputText><br/>
+          <apex:outputText value="初始初级气压（Bar）"></apex:outputText><apex:outputText value="{!w.firstpressure}"></apex:outputText><br/>
+          <apex:outputText value="初始次级气压（mBar）"></apex:outputText><apex:outputText value="{!w.otherpressure}"></apex:outputText><br/> 
+       </td>  
+       
+       <td style="border-left:0px solid black;display:{!If((ISBLANK(w.nlvsmj)) && (ISBLANK(w.zdnlvsmj)),'','none')}"> 
+          <apex:outputText value="初始激光腔脉冲数（M）"></apex:outputText><apex:outputText value="{!w.lasernum}"></apex:outputText><br/>
+          <apex:outputText value="初始初级气压（Bar）"></apex:outputText><apex:outputText value="{!w.firstpressure}"></apex:outputText><br/>
+          <apex:outputText value="初始次级气压（mBar）"></apex:outputText><apex:outputText value="{!w.otherpressure}"></apex:outputText><br/> 
+           &nbsp;<br/>
+           &nbsp;
+       </td>  
+     </tr>
+     <tr>
+       <td style="text-align:center">解决方案</td>
+       <td colspan="2" style="height:120px;text-align:left;valign:top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!w.solution}"></apex:outputText></td>
+     </tr>
+     <tr style="display:{!If(w.types='欧堡设备','none','')}">
+       <td style="height:38px;text-align:center">最终参数</td>
+       <td style="border-right:0px solid black">
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="最终能量测试HF（nm）"></apex:outputText><apex:outputText value="{!w.hfnmend}"></apex:outputText><br/>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="最终能量测试HF（mj）"></apex:outputText><apex:outputText value="{!w.hfmjend}"></apex:outputText><br/>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="最终能量测试LF（nm）"></apex:outputText><apex:outputText value="{!w.lfnmend}"></apex:outputText><br/>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="最终能量测试LF（mj）"></apex:outputText><apex:outputText value="{!w.lfmjend}"></apex:outputText><br/>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="最终能量测试HV（V）"></apex:outputText><apex:outputText value="{!w.hvvend}"></apex:outputText></br>
+       </td>
+       <td style="border-left:0px solid black;display:{!If((!ISBLANK(w.nlvsmjend)) && (ISBLANK(w.zdnlvsmjend)),'','none')}">
+          <apex:outputText value="最终最大能量950v10s下（mj）" ></apex:outputText><apex:outputText value="{!w.nlvsmjend}"></apex:outputText><br/>
+         <!--  <apex:outputText value="最终最大能量1400v10s下（mj）" style="display:{!If(ISBLANK(w.zdnlvsmjend),'none','')}"></apex:outputText><apex:outputText value="{!w.zdnlvsmjend}"></apex:outputText><br/> -->
+          <apex:outputText value="最终激光腔脉冲数（M）"></apex:outputText><apex:outputText value="{!w.lasernumend}"></apex:outputText><br/>
+          <apex:outputText value="最终初级气压（Bar）   "></apex:outputText><apex:outputText value="{!w.firstpressureend}"></apex:outputText><br/>
+          <apex:outputText value="最终次级气压（mBar）"></apex:outputText><apex:outputText value="{!w.otherpressureend}"></apex:outputText><br/>
+          &nbsp;
+       </td>
+       
+       <td style="border-left:0px solid black;display:{!If((ISBLANK(w.nlvsmjend)) && (!ISBLANK(w.zdnlvsmjend)),'','none')}">
+          <!-- <apex:outputText value="最终最大能量950v10s下（mj）" ></apex:outputText><apex:outputText value="{!w.nlvsmjend}"></apex:outputText><br/> -->
+          <apex:outputText value="最终最大能量1400v10s下（mj）" ></apex:outputText><apex:outputText value="{!w.zdnlvsmjend}"></apex:outputText><br/>
+          <apex:outputText value="最终激光腔脉冲数（M）"></apex:outputText><apex:outputText value="{!w.lasernumend}"></apex:outputText><br/>
+          <apex:outputText value="最终初级气压（Bar）   "></apex:outputText><apex:outputText value="{!w.firstpressureend}"></apex:outputText><br/>
+          <apex:outputText value="最终次级气压（mBar）"></apex:outputText><apex:outputText value="{!w.otherpressureend}"></apex:outputText><br/>
+          <br/>
+       </td>
+       
+       <td style="border-left:0px solid black;display:{!If((!ISBLANK(w.nlvsmjend)) && (!ISBLANK(w.zdnlvsmjend)),'','none')}">
+          <apex:outputText value="最终最大能量950v10s下（mj）" ></apex:outputText><apex:outputText value="{!w.nlvsmjend}"></apex:outputText><br/>
+          <apex:outputText value="最终最大能量1400v10s下（mj）" ></apex:outputText><apex:outputText value="{!w.zdnlvsmjend}"></apex:outputText><br/>
+          <apex:outputText value="最终激光腔脉冲数（M）"></apex:outputText><apex:outputText value="{!w.lasernumend}"></apex:outputText><br/>
+          <apex:outputText value="最终初级气压（Bar）   "></apex:outputText><apex:outputText value="{!w.firstpressureend}"></apex:outputText><br/>
+          <apex:outputText value="最终次级气压（mBar）"></apex:outputText><apex:outputText value="{!w.otherpressureend}"></apex:outputText><br/>
+       </td>
+       
+       <td style="border-left:0px solid black;display:{!If((ISBLANK(w.nlvsmjend)) && (ISBLANK(w.zdnlvsmjend)),'','none')}">
+          <apex:outputText value="最终激光腔脉冲数（M）"></apex:outputText><apex:outputText value="{!w.lasernumend}"></apex:outputText><br/>
+          <apex:outputText value="最终初级气压（Bar）   "></apex:outputText><apex:outputText value="{!w.firstpressureend}"></apex:outputText><br/>
+          <apex:outputText value="最终次级气压（mBar）"></apex:outputText><apex:outputText value="{!w.otherpressureend}"></apex:outputText><br/>
+          <br/>
+          <br/>
+       </td>
+     </tr>
+     <tr>
+       <td style="text-align:center">结果</td>
+       <td colspan="2"></td>
+     </tr>
+     <tr>
+       <td style="text-align:center">建议</td>
+       <td colspan="2"></td>
+     </tr>
+     </apex:repeat>
+   </table>
+  </div>
+  <div id="fonts">
+  <font size="6"><b>配件更换</b></font>
+  <div id="changetable">
+  <table border="1" cellspacing="0px" cellpadding="0px" style="width:698px;text-align:center">
+   <tr>
+     <td style="height:25px">序号</td>
+     <td style="height:25px">名称 P/N</td>
+     <td style="height:25px">S/N</td>
+     <td style="height:25px">数量</td>
+   </tr>
+   <apex:repeat value="{!listinner}" var="inners">
+   <tr>
+    <td><apex:outputText value="{!inners.counts}"></apex:outputText></td>
+    <td><apex:outputText value="{!inners.PNname}"></apex:outputText></td>
+    <td><apex:outputText value="{!inners.serialnumber}"></apex:outputText></td>
+    <td><apex:outputText value="{!inners.numbers}"></apex:outputText></td>
+   </tr>
+   </apex:repeat>
+  </table>
+  </div>
+  </div>
+  <div class="client">
+  <table style="width:698px;font-size:12px" >
+  <apex:repeat value="{!wrapp}" var="w">
+   <tr>
+    <td style="width:28px;height:23px">客户意见：</td>
+    <td style="border-bottom:1px solid black"></td>
+   </tr>
+   <tr>
+    <td colspan="2" style="border-bottom:1px solid black;height:23px"></td>
+   </tr>
+   <tr>
+    <td colspan="2" style="border-bottom:1px solid black;height:23px"></td>
+   </tr>
+  </table>
+  </div>
+  <div class="end">
+   <table style="width:698px;font-size:12px" border="0">
+    <tr>
+     <td style="width:50px;">总计：  </td>
+     <td ><apex:outputText value="{!w.totals}"></apex:outputText>(元)</td>
+     <td style="width:60px">技术服务价值：  </td>
+     <td ><apex:outputText value="{!w.jsfwjz}"></apex:outputText>(元)</td>
+     <td style="width:60px">配件更换价值：  </td>
+     <td ><apex:outputText value="{!w.sqtotleprice}"></apex:outputText>(元)</td>
+     <td style="width:60px">保内免费：  </td>
+     <td style="width:60px">是 &nbsp;□&nbsp;否 &nbsp;□</td> 
+     </tr>
+    <tr>
+     <td >服务工程师：  </td>
+     <td colspan="2"><apex:outputText value="{!w.serviceengnineer}"></apex:outputText></td>
+     <td style="text-align:right">客户签字：</td>
+     <td colspan="4"><!-- <apex:outputText value="{!w.acceptor}"> </apex:outputText>--></td>
+    </tr>
+    <tr>
+     <td >完成时间：</td>
+     <td colspan="2"><apex:outputText value="{!w.completetime}"></apex:outputText></td>
+     <td style="text-align:right">验收时间：</td>
+     <td colspan="4"><!-- <apex:outputText value="{!w.receptiontime}"></apex:outputText> --></td>
+    </tr>
+    </apex:repeat>
+   </table>
+  </div>
+</body>
+ </html>
+</apex:page>

@@ -1,0 +1,4 @@
+<apex:page >
+  <analytics:reportChart reportId="00O6F000009JVim"/>
+    <analytics:reportChart reportId="00O6F000009JVim"/>
+</apex:page>

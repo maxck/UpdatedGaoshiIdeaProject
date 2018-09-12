@@ -1,0 +1,41 @@
+<apex:page extensions="LoadingConditionNextWeek" standardController="SalesWeeklyReport__c">
+    <apex:form >     
+        <apex:pageBlock >
+           
+          <apex:pageBlockTable value="{!AllOpportunities}" var="oppo">
+            <apex:column headerValue="{!$ObjectType.LoadingCondition__c.Fields.Account__c.Label}">
+                <apex:outputLink value="/{!oppo.Account__c}" id="accountid" target="_top">
+                    {!oppo.Account__r.name}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.LoadingCondition__c.Fields.Opportunity__c.Label}">
+                <apex:outputLink value="/{!oppo.Opportunity__c}" id="OppId" target="_top">
+                    {!oppo.Opportunity__r.name}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.LoadingCondition__c.Fields.OpportunityStageName__c.Label}">
+                {!oppo.OpportunityStageName__c}
+            </apex:column>
+            
+            <apex:column headerValue="{!$ObjectType.LoadingCondition__c.Fields.BarndAndType__c.Label}">
+                {!oppo.BarndAndType__c}
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.LoadingCondition__c.Fields.Amount__c.Label}">
+                {!oppo.Amount__c}
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.LoadingCondition__c.Fields.ClosedDate__c.Label}">
+            
+                <apex:outputText value="{0,date,yyyy-MM-dd}"> <apex:param value="{!oppo.ClosedDate__c}" /> </apex:outputText>
+            </apex:column>
+            
+            <apex:column headerValue="{!$ObjectType.LoadingCondition__c.Fields.InstalledDate__c.Label}">
+            
+                <apex:outputText value="{0,date,yyyy-MM-dd}"> <apex:param value="{!oppo.InstalledDate__c}" /> </apex:outputText>
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.LoadingCondition__c.Fields.StagetDescription__c.Label}">
+                {!oppo.StagetDescription__c}
+            </apex:column>
+          </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

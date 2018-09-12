@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>standard-home</defaultLandingTab>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>技术服务管理</label>
+    <tabs>standard-Case</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-WorkOrder</tabs>
+    <tabs>standard-MaintenancePlan</tabs>
+    <tabs>FSL__Master_Settings</tabs>
+    <tabs>FSL__FieldService</tabs>
+    <tabs>FSL__Service_Goal__c</tabs>
+    <tabs>chance__c</tabs>
+    <tabs>chanceproduct__c</tabs>
+    <tabs>polling__c</tabs>
+    <tabs>servicereport__c</tabs>
+    <tabs>servicerequest__c</tabs>
+    <tabs>Knowledge</tabs>
+    <tabs>ExtendedWarrantyProduct__c</tabs>
+    <tabs>CustomObject22__c</tabs>
+    <tabs>SpareProduct__c</tabs>
+    <tabs>standard-WorkType</tabs>
+    <tabs>CustomObject24__c</tabs>
+    <tabs>CustomObject20__c</tabs>
+    <tabs>RegularSpare__c</tabs>
+    <tabs>CustomObject25__c</tabs>
+    <tabs>BackupMachineResources__c</tabs>
+    <tabs>StandbyApplication__c</tabs>
+</CustomApplication>

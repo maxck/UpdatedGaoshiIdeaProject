@@ -1,0 +1,403 @@
+<apex:page renderAs="pdf" controller="Ctr_CreatePDF_InstallReport" >
+<html>
+    <head>
+        <style>
+            body {font-family: Arial Unicode MS;}
+            #d2{
+            width:330px;
+            height:60px;
+            border:1px solid black;
+            position:relative;
+            margin-top:-70px;
+            margin-left:380px;
+            font-size:10px;
+            }
+            #topright{
+            margin-top:5px;
+            margin-left:8px;
+            }
+            #dline{
+            margin-top:10px;
+            }
+            #line td{
+            line-height:25px;
+            margin-left:5px;
+            }
+            #tests{
+            margin-top:10px;
+            font-size:12px;
+            }
+            #teststb{
+            margin-left:10px;
+            line-height:28px;
+            border:0px solid blue;
+            }
+            #datas{
+            height:168px;
+            border:1px solid black;
+            }
+            #traning{
+            margin-top:10px;
+            font-size:12px;
+            }
+            #traningdata{
+            border:1px solid black;
+            margin-top:10px;
+            }
+            #traningtb{
+            line-height:28px;
+            margin-left:10px;
+            }
+            #attachment{
+            margin-top:10px;
+            font-size:12px;
+            }
+            #dtime{
+            margin-top:10px;
+            }
+            #dtimetb{
+            line-height:28px;
+            }
+            #dsign{
+            margin-top:10px;
+            font-size:12px;
+            }
+            #dsigndata{
+            border:1px solid black;
+            margin-top:10px;
+            }
+            #dsigntb{
+            margin-left:8px;
+            }
+        </style>
+    </head>
+<body>
+<div id="d1">
+  <table id="header" style="font-size:22px">
+    <tr>
+      <td><apex:image url="{!$Resource.pdflogo}"/></td>
+    </tr>
+    <tr>
+      <td><b>上海明望公司设备安装报告</b></td>
+    </tr>
+    <tr>
+      <td><b>Installation Report</b></td>
+    </tr>
+  </table>
+</div>
+<div id="d2">
+   <table id="topright" >
+     <tr>
+       <td colspan="2" ><b>北京东城区朝阳门北大街2号港澳中心写字楼618室（100027）</b> </td>
+     </tr>
+     <tr>
+       <td>维修热线:010-59792025</td>
+       <td>Fax:010-59792025-821</td>
+     </tr>
+     <!--
+           <tr>
+       <td  colspan="2">北京 Tel:010-59792025</td>
+     </tr>
+     <tr>
+       <td colspan="2">广州 Tel:020-22129965</td>
+     </tr>
+     <tr>
+       <td  colspan="2">上海 Tel:021-64326282</td>
+     </tr>
+     -->
+
+   </table>
+ </div>
+  <div id="dine">
+    <table id="line" style="font-size:11px" cellspacing="0px" cellpadding="0px" >
+    <apex:repeat value="{!wrapp}" var="w">
+    <tr>
+      <td>医院名称:</td>
+      <td colspan="4" style="border-bottom:1px solid black;width:480px"><apex:outputText value="{!w.hospitalName}"></apex:outputText></td>
+    </tr>
+     <tr>
+      <td>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址:</td>
+      <td colspan="5" style="border-bottom:1px solid black"><apex:outputText value="{!w.address}"></apex:outputText></td>
+      <td>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编:</td>
+      <td style="border-bottom:1px solid black;width:140px"><apex:outputText value="{!w.postCode}"></apex:outputText></td>
+    </tr>  
+    <tr>
+      <td>使用科室：</td>
+      <td style="border-bottom:1px solid black;width:120px"><apex:outputText value="{!w.department}"></apex:outputText></td>
+      <td >联系人：</td>
+      <td style="border-bottom:1px solid black;width:120px"><apex:outputText value="{!w.contacts}"></apex:outputText></td>
+      <td >座&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</td>
+      <td style="border-bottom:1px solid black;width:150px"><apex:outputText value="{!w.landline}"></apex:outputText></td>
+      <td >手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</td>
+      <td style="border-bottom:1px solid black;width:100px"><apex:outputText value="{!w.phone}"></apex:outputText></td>
+    </tr>
+    <tr>
+      <td >设备名称:</td>
+      <td colspan="3" style="border-bottom:1px solid black;width:120px"><apex:outputText value="{!w.equipmentname}"></apex:outputText></td>
+      <td >型&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号:</td>
+      <td style="border-bottom:1px solid black;width:50px"><apex:outputText value="{!w.equipmentunittype}"></apex:outputText></td>
+      <td >序&nbsp;&nbsp;&nbsp;列&nbsp;&nbsp;号:</td>
+      <td style="border-bottom:1px solid black;width:100px"><apex:outputText value="{!w.equipment}"></apex:outputText></td>
+    </tr>
+    </apex:repeat>
+    </table>
+    </div>
+    <apex:repeat value="{!wrapp}" var="w">
+    <div id="tests" style="display:{!If(w.types='附属设备、欧堡','none','')}" >设备安装调试情况</div>
+    </apex:repeat>
+    <apex:repeat value="{!wrapp}" var="w">
+    <div id="datas" style="display:{!If(w.types='附属设备、欧堡','none','')}">
+      <table id="teststb" style="width:690px;font-size:11px"  border="0">  <!--cellspacing="0px"; cellpadding="0px"; -->
+       <tr>
+         <td colspan="14" >准分子设备参数：</td>
+       </tr>
+       <tr>
+         <td style="width:78px">安装环境：</td> 
+         <td>温度</td>
+         <td><apex:outputText value="{!w.temperature}"></apex:outputText></td>
+         <!-- <td style="width:49px;display:{!If(w.temperature='18℃-24℃','','none')}" ><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>&nbsp;&nbsp;温度</td>
+         <td style="width:49px;display:{!If(w.temperature='其他','','none')}" >口&nbsp;&nbsp;温度</td>
+         <td style="width:76px">18°C – 24 °C</td>
+         <td>&nbsp;&nbsp;</td>
+         <td colspan="11" style="width:76px;display:{!If(w.temperature='18℃-24℃','','none')}">口&nbsp;&nbsp;其它：</td>
+         <td colspan="11" style="width:76px;display:{!If(w.temperature='其他','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>&nbsp;&nbsp;其它：</td> -->
+       </tr>
+       <tr>
+        <td>&nbsp;&nbsp;</td>
+        <td>湿度</td>
+        <td><apex:outputText value="{!w.humidity}"></apex:outputText></td>
+        <!-- <td>&nbsp;&nbsp;</td>
+        <td style="width:49px;display:{!If(w.humidity='30%-45%','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>&nbsp;&nbsp;湿度</td>
+        <td style="width:49px;display:{!If(w.humidity='其他','','none')}">口&nbsp;&nbsp;湿度</td>
+        <td style="width:76px">30% - 45% </td>
+        <td>&nbsp;&nbsp;</td>
+        <td colspan="11" style="width:76px;display:{!If(w.humidity='30%-45%','','none')}">口&nbsp;&nbsp;其它：</td>
+        <td colspan="11" style="width:76px;display:{!If(w.humidity='其他','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>&nbsp;&nbsp;其它：</td> -->
+       </tr>
+        <tr>
+         <td>能量测试：</td>
+         <td >口HF：</td> 
+         <td style="border-bottom:1px solid black;text-align:center"><apex:outputText value="{!w.hfnm}"></apex:outputText></td>
+         <td style="width:18px">nm/</td>
+         <td style="border-bottom:1px solid black;width:60px;text-align:center"><apex:outputText value="{!w.hfmj}"></apex:outputText></td>
+         <td style="width:28px">mj</td>
+         <td style="width:35px"> 口LF：</td>
+         <td style="border-bottom:1px solid black;width:68px;text-align:center"><apex:outputText value="{!w.lfnm}"></apex:outputText></td>
+         <td style="width:18px">nm/</td>
+         <td style="border-bottom:1px solid black;width:68px;text-align:center"><apex:outputText value="{!w.lfmj}"></apex:outputText></td>
+         <td style="width:28px">mj</td>
+         <td style="width:35px"> 口HV：</td>
+         <td style="border-bottom:1px solid black;width:68px;text-align:center"><apex:outputText value="{!w.hvv}"></apex:outputText></td>
+         <td>v</td>
+       </tr> 
+       <tr>
+       <td colspan="2">气体参数/气瓶初始气压：</td>
+       <td style="border-bottom:1px solid black;width:68px;text-align:center"><apex:outputText value="{!w.initialpressure}"></apex:outputText></td>
+       <td>Bar</td>
+       <td style="text-align:right">腔内气压：</td>
+       <td colspan="2" style="border-bottom:1px solid black;width:68px;text-align:center"><apex:outputText value="{!w.intracavitypressure}"></apex:outputText></td>
+       <td colspan="7">Bar</td>
+      </tr>
+    <!--   <tr>
+       <td>运行情况：</td>
+       <td colspan="2"> 口正常</td>
+       <td colspan="11"> 口其它：</td>
+      </tr> -->
+      </table>
+    </div>
+      </apex:repeat>
+    <div id="traning">设备培训情况</div>
+    <div id="traningdata">
+      <table id="traningtb" style="width:680px;font-size:11px" ><!-- cellspacing="0px";cellpadding="0px";border="0" -->
+       <apex:repeat value="{!wrapp}" var="w">
+        <tr>
+        <td  style="display:{!If(w.traincase='设备操作','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     口 设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     口 设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     口 注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/> 口其它：</td>
+        <td  style="display:{!If(w.traincase='设备基本维护','','none')}">口设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               口 设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               口 注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/> 口其它：</td>
+                               
+        <td  style="display:{!If(w.traincase='设备使用安全','','none')}">口设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               口 设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               口 注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/> 口其它：</td>
+                               
+        <td  style="display:{!If(w.traincase='注意事项','','none')}">口设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               口 设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               口 设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/> 口其它：</td>
+       
+        <td  style="display:{!If(w.traincase='其他','','none')}">口设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               口 设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               口 设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               口注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/> <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>其它：</td>
+     
+        <td  style="display:{!If(w.traincase='设备操作;设备基本维护','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               口 设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               口注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>口其它：</td>
+                               
+        <td  style="display:{!If(w.traincase='设备操作;设备使用安全','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                               口注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>口其它：</td>
+        
+        <td  style="display:{!If(w.traincase='设备操作;注意事项','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>口其它：</td>
+     
+        <td  style="display:{!If(w.traincase='设备操作;其他','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>其它：</td>
+      
+        <td  style="display:{!If(w.traincase='设备基本维护;设备使用安全','','none')}">口设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>口其它：</td>
+        
+        <td  style="display:{!If(w.traincase='设备基本维护;注意事项','','none')}">口设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>口其它：</td>
+       
+        <td  style="display:{!If(w.traincase='设备基本维护;其他','','none')}">口设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>其它：</td>
+      
+        <td  style="display:{!If(w.traincase='设备使用安全;注意事项','','none')}">口设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             口设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>口其它：</td>
+        
+        <td  style="display:{!If(w.traincase='设备使用安全;其他','','none')}">口设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             口设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>其它：</td>
+        
+        <td  style="display:{!If(w.traincase='注意事项;其他','','none')}">口设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             口设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             口设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>其它：</td>
+        
+        <td  style="display:{!If(w.traincase='设备操作;设备基本维护;设备使用安全','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             口注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>口其它：</td>
+        
+        <td  style="display:{!If(w.traincase='设备操作;设备基本维护;注意事项','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>口其它：</td>
+        
+        <td  style="display:{!If(w.traincase='设备操作;设备基本维护;其他','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>其它：</td>
+        
+        
+        <td  style="display:{!If(w.traincase='设备操作;设备使用安全;注意事项','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>口其它：</td>
+        
+        <td  style="display:{!If(w.traincase='设备操作;设备使用安全;其他','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>其它：</td>
+        
+        <td  style="display:{!If(w.traincase='设备操作;注意事项;其他','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口 设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>其它：</td>
+        
+        <td  style="display:{!If(w.traincase='设备基本维护;设备使用安全;注意事项','','none')}">口设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>口其它：</td>
+         
+        <td  style="display:{!If(w.traincase='设备基本维护;设备使用安全;其他','','none')}">口设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>其它：</td>
+         
+        <td  style="display:{!If(w.traincase='设备使用安全;注意事项;其他','','none')}">口设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>其它：</td>
+        
+        <td  style="display:{!If(w.traincase='设备操作;设备基本维护;设备使用安全;注意事项','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>口其它：</td>
+        
+        <td  style="display:{!If(w.traincase='设备操作;设备使用安全;注意事项;其他','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             口设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>其它：</td>
+        
+        
+        <td  style="display:{!If(w.traincase='设备操作;设备基本维护;注意事项;其他','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              口设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>其它：</td>
+        
+        <td  style="display:{!If(w.traincase='设备操作;设备基本维护;设备使用安全;其他','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             口注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>其它：</td>
+        
+        
+        <td  style="display:{!If(w.traincase='设备基本维护;设备使用安全;注意事项;其他','','none')}">口设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>其它：</td>
+        
+        <td  style="display:{!If(w.traincase='设备操作;设备基本维护;设备使用安全;注意事项;其他','','none')}"><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备操作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备基本维护 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>设备使用安全&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>注意事项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/><apex:image url="{!$Resource.rights}" style="height:15px;margin-bottom:-3px"/>其它：</td>
+        </tr>
+       <tr>
+        <td colspan="2">被培训人签字： </td>
+       </tr> 
+       </apex:repeat>
+      </table>
+    </div>
+    <div id="attachment">设备附件清单 （见附件）</div>
+    <div id="dtime">
+     <table id="dtimetb" style="width:670px;font-size:11px" ><!-- cellspacing="0px";cellpadding="0px";border="0" -->
+     <apex:repeat value="{!wrapp}" var="w">
+      <tr>
+       <td style="width:69px">安装工程师</td>
+       <td style="border-bottom:1px solid black;width:190px"><apex:outputText value="{!w.installengnineer}"></apex:outputText></td>
+       <td style="width:69px">到达日期 </td>
+       <td style="border-bottom:1px solid black"><apex:outputText value="{!w.arrivaldate}"></apex:outputText></td>
+       <td style="width:69px">完成日期</td>
+       <td style="border-bottom:1px solid black"><apex:outputText value="{!w.completedate}"></apex:outputText></td>
+      </tr>
+      </apex:repeat>
+     </table>
+    </div>
+    <div id="dsign">客户验收签字栏</div>
+    <div id="dsigndata">
+      <table id="dsigntb" style="width:670px;font-size:11px" ><!-- cellspacing="0px";cellpadding="0px";border="0" -->
+       <apex:repeat value="{!wrapp}" var="w">
+       <tr>
+        <td>签名： </td>
+        <td>时间：</td>
+       </tr>
+       <tr>
+        <td colspan="2" style="height:169px"></td>
+       </tr>
+       </apex:repeat>
+      </table>
+    </div>
+</body>
+</html> 
+</apex:page>

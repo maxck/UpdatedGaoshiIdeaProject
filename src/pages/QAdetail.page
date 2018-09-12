@@ -1,0 +1,42 @@
+<apex:page showHeader="true" standardController="knowledgecontent__c" extensions="QAdetail" tabstyle="knowledgecontent__c" sidebar="true">
+<apex:includeScript value="{!$Resource.jquery}" />
+<apex:includeScript value="{!URLFOR($Resource.ckeditor, 'ckeditor.js')}" />
+<apex:sectionHeader title="知识库内容编辑"/>   
+<apex:form >
+  <apex:pageBlock title="知识库内容：">   
+ 
+	 <apex:pageBlockSection title="详细信息" columns="1" rendered="{!not(strMode=='view')}">
+	 	<apex:inputField value="{!obj_QA.knowledgetype__c}"/>
+		 <apex:inputField value="{!obj_QA.keyword__c}" style="padding:0;margin:0;width:400px;"/>
+		 <apex:inputField value="{!obj_QA.Is_published__c}"/>
+		 <!-- <apex:inputField value="{!obj_QA.describe__c}"/>	 -->
+		 <apex:inputtextarea id="msgpost" richtext="false"
+                    value="{!obj_QA.describe__c}">
+                </apex:inputtextarea>
+         <script type="text/javascript">  
+                    CKEDITOR.replace('{!$Component.msgpost}', {
+                        filebrowserBrowseUrl : '{!$Page.SiteFileBrowser}',
+                        filebrowserImageBrowseUrl : '{!$Page.SiteFileBrowser}'
+                          
+                    }); 
+                    function beforeTextSave() {
+                        var objEditor = CKEDITOR.instances['{!$Component.msgpost}'];
+                        document.getElementById('{!$Component.msgpost}').value = objEditor
+                                .getData();
+                    }
+                </script>	 
+	 </apex:pageBlockSection>
+	 <apex:pageBlockSection title="问题详细说明" columns="1" rendered="{!strMode=='view'}">
+		 <apex:outputField value="{!obj_QA.keyword__c}"/>
+		 <apex:outputField value="{!obj_QA.describe__c}"/>
+	 </apex:pageBlockSection>
+	<apex:pageBlockButtons >
+		<apex:commandButton value="保存" action="{!save}" rendered="{!not(strMode=='view')}"/>
+		<apex:commandButton value="返回" action="{!back}" />
+	</apex:pageBlockButtons>
+ </apex:pageBlock>
+ 
+</apex:form>
+<apex:relatedList list="NotesAndAttachments" rendered="true">
+</apex:relatedList>
+</apex:page>

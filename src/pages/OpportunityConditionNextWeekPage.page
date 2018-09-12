@@ -1,0 +1,36 @@
+<apex:page docType="html-5.0" extensions="OpportunityConditionNextWeek"  standardController="SalesWeeklyReport__c">
+   <apex:form >     
+        <apex:pageBlock >
+          <apex:pageBlockTable value="{!AllOpportunities}" var="oppo1">
+            <apex:column headerValue="{!$ObjectType.OpportunityCondition__c.Fields.Account__c.Label}">
+                <apex:outputLink value="/{!oppo1.Account__c}" id="accountid" target="_top">
+                    {!oppo1.Account__r.name}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.OpportunityCondition__c.Fields.Opportunity__c.Label}">
+                <apex:outputLink value="/{!oppo1.Opportunity__c}" id="oppId" target="_top">
+                    {!oppo1.Opportunity__r.name}
+                </apex:outputLink>
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.OpportunityCondition__c.Fields.OpportunityStageName__c.Label}">
+                {!oppo1.OpportunityStageName__c}
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.OpportunityCondition__c.Fields.BarndAndType__c.Label}">
+                {!oppo1.BarndAndType__c}
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.OpportunityCondition__c.Fields.Amount__c.Label}">
+                {!oppo1.Amount__c}
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.OpportunityCondition__c.Fields.ClosedDate__c.Label}">
+                <apex:outputText value="{0,date,yyyy-MM-dd}"> <apex:param value="{!oppo1.ClosedDate__c}" /> </apex:outputText>
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.OpportunityCondition__c.Fields.InstalledDate__c.Label}">
+                <apex:outputText value="{0,date,yyyy-MM-dd}"> <apex:param value="{!oppo1.InstalledDate__c}" /> </apex:outputText>
+            </apex:column>
+            <apex:column headerValue="{!$ObjectType.OpportunityCondition__c.Fields.StagetDescription__c.Label}">
+                {!oppo1.StagetDescription__c}
+            </apex:column>
+          </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

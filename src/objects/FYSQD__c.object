@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>InDevelopment</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Abstract__c</fullName>
+        <externalId>false</externalId>
+        <label>摘要</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <externalId>false</externalId>
+        <label>出差申请</label>
+        <referenceTo>TravelRequest__c</referenceTo>
+        <relationshipName>CC2sSb</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>ApprovalFee__c</fullName>
+        <externalId>false</externalId>
+        <label>批准费用</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CostItem__c</fullName>
+        <externalId>false</externalId>
+        <label>费用项目</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>通 讯 费</fullName>
+                    <default>false</default>
+                    <label>通 讯 费</label>
+                </value>
+                <value>
+                    <fullName>市 内 交 通 费</fullName>
+                    <default>false</default>
+                    <label>市 内 交 通 费</label>
+                </value>
+                <value>
+                    <fullName>境 内 差 旅 费</fullName>
+                    <default>false</default>
+                    <label>境 内 差 旅 费</label>
+                </value>
+                <value>
+                    <fullName>境 外 差 旅 费</fullName>
+                    <default>false</default>
+                    <label>境 外 差 旅 费</label>
+                </value>
+                <value>
+                    <fullName>办 公 费</fullName>
+                    <default>false</default>
+                    <label>办 公 费</label>
+                </value>
+                <value>
+                    <fullName>福 利 费</fullName>
+                    <default>false</default>
+                    <label>福 利 费</label>
+                </value>
+                <value>
+                    <fullName>培 训 费</fullName>
+                    <default>false</default>
+                    <label>培 训 费</label>
+                </value>
+                <value>
+                    <fullName>租 赁 费</fullName>
+                    <default>false</default>
+                    <label>租 赁 费</label>
+                </value>
+                <value>
+                    <fullName>业 务 招 待 费</fullName>
+                    <default>false</default>
+                    <label>业 务 招 待 费</label>
+                </value>
+                <value>
+                    <fullName>劳 务 费</fullName>
+                    <default>false</default>
+                    <label>劳 务 费</label>
+                </value>
+                <value>
+                    <fullName>会 议 费</fullName>
+                    <default>false</default>
+                    <label>会 议 费</label>
+                </value>
+                <value>
+                    <fullName>咨 询 服 务 费</fullName>
+                    <default>false</default>
+                    <label>咨 询 服 务 费</label>
+                </value>
+                <value>
+                    <fullName>中 标 服 务 费</fullName>
+                    <default>false</default>
+                    <label>中 标 服 务 费</label>
+                </value>
+                <value>
+                    <fullName>奖 金</fullName>
+                    <default>false</default>
+                    <label>奖 金</label>
+                </value>
+                <value>
+                    <fullName>邮 寄 费</fullName>
+                    <default>false</default>
+                    <label>邮 寄 费</label>
+                </value>
+                <value>
+                    <fullName>社 保 金</fullName>
+                    <default>false</default>
+                    <label>社 保 金</label>
+                </value>
+                <value>
+                    <fullName>市 场 推 广 费</fullName>
+                    <default>false</default>
+                    <label>市 场 推 广 费</label>
+                </value>
+                <value>
+                    <fullName>工 资</fullName>
+                    <default>false</default>
+                    <label>工 资</label>
+                </value>
+                <value>
+                    <fullName>售 后 维 修 费</fullName>
+                    <default>false</default>
+                    <label>售 后 维 修 费</label>
+                </value>
+                <value>
+                    <fullName>广 告 费</fullName>
+                    <default>false</default>
+                    <label>广 告 费</label>
+                </value>
+                <value>
+                    <fullName>运 杂 费</fullName>
+                    <default>false</default>
+                    <label>运 杂 费</label>
+                </value>
+                <value>
+                    <fullName>样 机 费</fullName>
+                    <default>false</default>
+                    <label>样 机 费</label>
+                </value>
+                <value>
+                    <fullName>客 户 培 训 费</fullName>
+                    <default>false</default>
+                    <label>客 户 培 训 费</label>
+                </value>
+                <value>
+                    <fullName>提 成</fullName>
+                    <default>false</default>
+                    <label>提 成</label>
+                </value>
+                <value>
+                    <fullName>注 册 费</fullName>
+                    <default>false</default>
+                    <label>注 册 费</label>
+                </value>
+                <value>
+                    <fullName>补 充 医 疗 保 险</fullName>
+                    <default>false</default>
+                    <label>补 充 医 疗 保 险</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ExpenditureIncurred__c</fullName>
+        <externalId>false</externalId>
+        <label>发生费用</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>费用申请</label>
+    <nameField>
+        <displayFormat>FYSQ{yyyy}{000000}</displayFormat>
+        <label>费用申请单编号</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>费用申请</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

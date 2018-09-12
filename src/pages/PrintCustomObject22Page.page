@@ -1,0 +1,208 @@
+<apex:page standardController="CustomObject22__c" contentType="application/msword#template.doc" applyHTMLTag="true" showHeader="true" cache="true">
+    <style type="text/css">
+        body{
+            font-family: 微软雅黑 ! important; 
+            font-size : 14px ;
+        }
+        #ht{
+            float:right;
+        }
+        h1{
+            font-size : 19px;
+        }
+        
+    </style>
+<body>
+<div >   
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <apex:image url="https://c.ap4.content.force.com/servlet/servlet.ImageServer?id=0156F00000DRgbz&oid=00D9000000107JA&lastMod=1531735155000" width="170" height="40" ></apex:image>
+</div>
+
+<h1 align="center"><b>设备保修合同书</b></h1><br/>
+<div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span id="ht"><b>合同号：{!CustomObject22__c.Name}</b></span><br/>
+<span>&nbsp;甲方（买方）： &nbsp;&nbsp;{!CustomObject22__c.AccountName__r.name} </span><br/>
+<span>&nbsp;地址：{!CustomObject22__c.Adress__c}</span><br/>
+<span>&nbsp;电话：{!CustomObject22__c.Phone__c}</span><br/>
+<br/>
+<span>&nbsp;乙方（卖方）：北京高视远望科技有限责任公司</span><br/>
+<span>&nbsp;地址：北京西城区西直门南小街国英园1号825（100035）</span><br/>
+<span>&nbsp;电话：010-58561122；传真：010-58561122-301</span><br/>
+<span>为保证甲方所购买设备的正常工作，获得快速优质的服务，经甲乙双方友好协商，特签订本合同。</span><br/>
+<span>&nbsp;一、保修设备及年限：</span><br/>
+<span>&nbsp;&nbsp;保修设备：共______台设备，详细列表如下：</span><br/>
+<Table border="1" style="width:565px">
+    <tr>
+        <td>序号</td>
+        <td>名称</td>
+        <td>型号</td>
+        <td>序列号</td>
+        <td>使用年限</td>
+        <td>安装日期</td>
+        <td>年保修金额（元）</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>{!CustomObject22__c.EquipmentName1__c}</td>
+        <td>{!CustomObject22__c.EquipmentModel1__c}</td>
+        <td>{!CustomObject22__c.InmarsatSerial01__r.Name}</td>
+        <td>{!CustomObject22__c.UsefulLife1__c}</td>
+        <td><apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+            <apex:param value="{!CustomObject22__c.installationdate1__c}" /> 
+            </apex:outputText>
+        </td>
+        <td>{!CustomObject22__c.ServiceCharge1__c}</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>{!CustomObject22__c.EquipmentName2__c}</td>
+        <td>{!CustomObject22__c.EquipmentModel2__c}</td>
+        <td>{!CustomObject22__c.InmarsatSerial02__r.Name}</td>
+        <td>{!CustomObject22__c.UsefulLife2__c}</td>
+        <td><apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+            <apex:param value="{!CustomObject22__c.installationdate2__c}" /> 
+            </apex:outputText>
+        </td>
+        <td>{!CustomObject22__c.ServiceCharge2__c}</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>{!CustomObject22__c.EquipmentName3__c}</td>
+        <td>{!CustomObject22__c.EquipmentModel3__c}</td>
+        <td>{!CustomObject22__c.InmarsatSerial03__r.Name}</td>
+        <td>{!CustomObject22__c.UsefulLife3__c}</td>
+        <td><apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+            <apex:param value="{!CustomObject22__c.installationdate3__c}" /> 
+            </apex:outputText>
+        </td>
+        <td>{!CustomObject22__c.ServiceCharge3__c}</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>{!CustomObject22__c.EquipmentName4__c}</td>
+        <td>{!CustomObject22__c.EquipmentModel4__c}</td>
+        <td>{!CustomObject22__c.InmarsatSerial04__r.Name}</td>
+        <td>{!CustomObject22__c.UsefulLife4__c}</td>
+        <td><apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+            <apex:param value="{!CustomObject22__c.installationdate4__c}" /> 
+            </apex:outputText>
+        </td>
+        <td>{!CustomObject22__c.ServiceCharge4__c}</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>{!CustomObject22__c.EquipmentName5__c}</td>
+        <td>{!CustomObject22__c.EquipmentModel5__c}</td>
+        <td>{!CustomObject22__c.InmarsatSerial05__r.Name}</td>
+        <td>{!CustomObject22__c.UsefulLife5__c}</td>
+        <td><apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+            <apex:param value="{!CustomObject22__c.installationdate5__c}" /> 
+            </apex:outputText>
+        </td>
+        <td>{!CustomObject22__c.ServiceCharge5__c}</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>{!CustomObject22__c.EquipmentName6__c}</td>
+        <td>{!CustomObject22__c.EquipmentModel6__c}</td>
+        <td>{!CustomObject22__c.InmarsatSerial06__r.Name}</td>
+        <td>{!CustomObject22__c.UsefulLife6__c}</td>
+        <td><apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+            <apex:param value="{!CustomObject22__c.installationdate6__c}" /> 
+            </apex:outputText>
+        </td>
+        <td>{!CustomObject22__c.ServiceCharge6__c}</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>{!CustomObject22__c.EquipmentName7__c}</td>
+        <td>{!CustomObject22__c.EquipmentModel7__c}</td>
+        <td>{!CustomObject22__c.InmarsatSerial07__r.Name}</td>
+        <td>{!CustomObject22__c.UsefulLife7__c}</td>
+        <td><apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+            <apex:param value="{!CustomObject22__c.installationdate7__c}" /> 
+            </apex:outputText>
+        </td>
+        <td>{!CustomObject22__c.ServiceCharge7__c}</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>{!CustomObject22__c.EquipmentName8__c}</td>
+        <td>{!CustomObject22__c.EquipmentModel8__c}</td>
+        <td>{!CustomObject22__c.InmarsatSerial08__r.Name}</td>
+        <td>{!CustomObject22__c.UsefulLife8__c}</td>
+        <td><apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+            <apex:param value="{!CustomObject22__c.installationdate8__c}" /> 
+            </apex:outputText>
+        </td>
+        <td>{!CustomObject22__c.ServiceCharge8__c}</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>{!CustomObject22__c.EquipmentName9__c}</td>
+        <td>{!CustomObject22__c.EquipmentModel9__c}</td>
+        <td>{!CustomObject22__c.InmarsatSerial09__r.Name}</td>
+        <td>{!CustomObject22__c.UsefulLife9__c}</td>
+        <td><apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+            <apex:param value="{!CustomObject22__c.installationdate9__c}" /> 
+            </apex:outputText>
+        </td>
+        <td>{!CustomObject22__c.ServiceCharge9__c}</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>{!CustomObject22__c.EquipmentName10__c}</td>
+        <td>{!CustomObject22__c.EquipmentModel10__c}</td>
+        <td>{!CustomObject22__c.InmarsatSerial10__r.Name}</td>
+        <td>{!CustomObject22__c.UsefulLife10__c}</td>
+        <td><apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+            <apex:param value="{!CustomObject22__c.installationdate10__c}" /> 
+            </apex:outputText>
+        </td>
+        <td>{!CustomObject22__c.ServiceCharge10__c}</td>
+    </tr>
+</Table>
+<span>&nbsp;&nbsp;2)&nbsp;保修范围：与设备配套使用的消耗品、耗材不属保修范围；</span><br/>
+<span>&nbsp;&nbsp;3)&nbsp;保修期限：自____年____月____日 至____ 年____月____日；</span><br/>
+<span>&nbsp;&nbsp;4)&nbsp;标准合同金额：人民币：大写：&nbsp;{!CustomObject22__c.AmountDX__c}&nbsp;&nbsp;&nbsp;；小写：&nbsp;{!CustomObject22__c.AllAccount__c}&nbsp;&nbsp;&nbsp;元</span><br/>
+<span>&nbsp;&nbsp;5)&nbsp;成交金额：人民币：大写：&nbsp;{!CustomObject22__c.SJDXAmount__c}&nbsp;&nbsp;&nbsp;；小写：&nbsp;{!CustomObject22__c.SJAmount__c}&nbsp;&nbsp;&nbsp;元</span><br/>
+<span>&nbsp;二、付款方式：</span><br/>
+<span>&nbsp;&nbsp;甲方应于本合同签定之日起_____个工作日内将保修费用的 100%：（小写）￥&nbsp;&nbsp;{!CustomObject22__c.paymentCharge__c}&nbsp;&nbsp;&nbsp; 元； （大写）     &nbsp;&nbsp;{!CustomObject22__c.paymentChargeDX__c}&nbsp;&nbsp;元汇入乙方指定帐号：</span><br/>
+<span><b>&nbsp;高视远望公司汇款信息：</b></span><br/>
+<span><b>&nbsp;公司名称：北京高视远望科技有限责任公司</b></span><br/>
+<span><b>&nbsp;开 户 行：中国银行北京西直门支行</b></span><br/>
+<span><b>&nbsp;税&nbsp;&nbsp;号：110102634381095</b></span><br/>
+<span><b>&nbsp;帐&nbsp;&nbsp;号：3454 5603 4610</b></span><br/>
+<span>&nbsp;三、乙方责任：</span><br/>
+<span>&nbsp;&nbsp;1、乙方每半年对甲方设备进行一次系统的检查、调试、和保养；甲方设备出现故障时，乙方在接到甲方书面通知（注：甲方应在&nbsp;&nbsp;&nbsp;&nbsp;小时内通知）后&nbsp;&nbsp;&nbsp;&nbsp;小时以内（除不可抗力和意外事件外）委派技术人员前往处理，并力争在&nbsp;&nbsp;&nbsp;&nbsp;小时内消除故障，以保证甲方设备正常运行。在&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个工作日内不能消除故障的，乙方应提供样机，确保甲方医疗活动的正常进行。</span><br/>
+<span>&nbsp;&nbsp;2、乙方每年对甲方设备进行一次系统的校准，并出具相关的校准报告。</span><br/>
+<span>&nbsp;&nbsp;3、此维修费含零备件、工程师费用、差旅费。</span><br/>
+<span>&nbsp;&nbsp;4、乙方在保修期内，每次维修维护后将向甲方设备科提供维修维护记录，并定期向贵院院提供所有维修维护记录。</span><br/>
+<span>&nbsp;&nbsp;5、保修期内，乙方向甲方专职工程师提供一般维护、保养培训。</span> <br/>
+<span>&nbsp;四、甲方责任：</span><br/>
+<span>&nbsp;&nbsp;1、自觉维护本合同所规定设备，避免人为因素损坏设备。</span><br/>
+<span>&nbsp;&nbsp;2、设备出现故障时，及时通知乙方并积极配合乙方的工作。</span><br/>
+<span>&nbsp;&nbsp;3、在未获得乙方授权许可的情况下，不能擅自拆卸、维修设备，否则造成的损坏不在乙方保修范围。</span><br/>
+<span>&nbsp;五、其它条款：</span><br/>
+<span>&nbsp;&nbsp;1、保修期后，双方协商签署设备继续保修协议。</span><br/>
+<span>&nbsp;&nbsp;2、乙方保证所有已更换的零部件在材质上使用原厂主配件和技术方面无任何缺陷。</span><br/>
+<span>&nbsp;&nbsp;3、因病毒而机器不能操作，或机器内发现非乙方安装的软件（如游戏软件） 等造成的损害，不在保修范围之内。</span><br/>
+<span>&nbsp;&nbsp;4、乙方不保修因外来异常因素所造成的设备损坏，如地震、火灾水灾或其它天然灾害。</span><br/>
+<span>&nbsp;&nbsp;5、为提高甲方工程师的技术水平，乙方同意每年对甲方工程师进行专业维护技术培训。</span><br/>
+<span>&nbsp;&nbsp;6、对于使用超过10年的设备，建议及时更新设备，当无法维修或维修成本超过设备原值的20%时则放弃维修。</span><br/>
+<span>&nbsp;六、法律诉讼：</span><br/>
+<span>&nbsp;&nbsp;签约双方在履约中发生争执和分歧，甲乙双方应通过友好协商解决，若经协商不能达成协议时，则可在原告所在地人民法院提起诉讼。</span><br/>
+<span>&nbsp;七、本合同一式二份，甲乙双方各执一份，自双方签字<b>盖章</b>之日起生效。</span><br/>
+<br/>
+<span>&nbsp;甲方：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乙方：北京高视远望科技有限责任公司</span><br/>
+<span>&nbsp;签字：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签字：</span><br/>
+<span>&nbsp;日期：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日期：</span><br/>
+</div>
+</body>   
+
+</apex:page>

@@ -1,0 +1,117 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0" extensions="OpportunityConditionCreatedThisWeek" standardController="SalesWeeklyReport__c">
+  <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="x-ua-compatible" content="ie=edge" />
+      <title>本周新增机会列表</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+       <!-- Import the Design System style sheet -->
+       <apex:slds />
+       <style>
+        div{
+            word-break:break-all; 
+            word-wrap:break-word;
+        }
+       </style>
+    </head>
+    <body>
+     <!--title start-->
+
+      <div class="slds-page-header">
+        <div class="slds-media">
+        <div class="slds-media__body">
+        <!--<h3 class="slds-page-header__title slds-truncate slds-align-middle" title="本周新增机会列表">本周新增机会列表</h3>-->
+        <div class="slds-page-header__title slds-truncate slds-align-middle" title="本周新增机会列表" style="font-size: 15px;
+    color: #27282e;font-weight : bold">本周新增机会列表</div>
+        </div>
+        </div>
+      </div>
+     <!--title start--> 
+      <!-- REQUIRED SLDS WRAPPER -->
+      <div class="slds-scope">
+        <!-- PRIMARY CONTENT WRAPPER -->
+        <table class="slds-table slds-max-medium-table_stacked-horizontal">
+          <thead>
+            <tr class="slds-text-title_caps">
+              <th scope="col">
+                <div class="slds-truncate" title="{!$ObjectType.OpportunityCondition__c.Fields.Account__c.Label}">
+                </div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="{!$ObjectType.OpportunityCondition__c.Fields.Opportunity__c.Label}">
+                </div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="{!$ObjectType.OpportunityCondition__c.Fields.BarndAndType__c.Label}">
+                </div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="{!$ObjectType.OpportunityCondition__c.Fields.Amount__c.Label}">
+                </div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="{!$ObjectType.OpportunityCondition__c.Fields.ClosedDate__c.Label}">
+                </div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="{!$ObjectType.OpportunityCondition__c.Fields.OpportunityStageName__c .Label}">
+                </div>
+              </th>
+              <th scope="col">
+                <div class="slds-truncate" title="{!$ObjectType.OpportunityCondition__c.Fields.StagetDescription__c.Label}">
+                </div>
+              </th>
+              <th class="slds-cell-shrink" scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <apex:repeat value="{!AllOpportunities}" var="oppo" id="theRepeat">
+            <tr class="slds-hint-parent">
+              <td data-label="{!$ObjectType.OpportunityCondition__c.Fields.Account__c.Label}">
+                
+                    <apex:outputLink value="/{!oppo.Account__c}" id="accountid" target="_top">
+                        {!oppo.Account__r.name}
+                    </apex:outputLink>
+                
+              </td>
+              <td data-label="{!$ObjectType.OpportunityCondition__c.Fields.Opportunity__c.Label}">
+                
+                    <apex:outputLink value="/{!oppo.Opportunity__c}" id="OppId">
+                        {!oppo.Opportunity__r.name}
+                    </apex:outputLink>
+                
+              </td>
+              <td data-label="{!$ObjectType.OpportunityCondition__c.Fields.BarndAndType__c.Label}">
+                
+                   <p style="text-align:left;text-indent:35px;"> {!oppo.BarndAndType__c} </p>
+                
+              </td>
+              <td data-label="{!$ObjectType.OpportunityCondition__c.Fields.Amount__c.Label}">
+                
+                  <p style="text-align:left;text-indent:35px;">  {!oppo.Amount__c}  </p>
+                
+              </td>
+              <td data-label="{!$ObjectType.OpportunityCondition__c.Fields.ClosedDate__c.Label}">
+                
+                     <apex:outputText value="{0,date,yyyy-MM-dd}"> <apex:param value="{!oppo.ClosedDate__c}" /> </apex:outputText>
+                
+                
+              </td>
+              <td data-label="{!$ObjectType.OpportunityCondition__c.Fields.OpportunityStageName__c .Label}">
+                
+                   <p style="text-align:left;text-indent:35px;"> {!oppo.OpportunityStageName__c}</p>
+                
+              </td>
+              <td data-label="{!$ObjectType.OpportunityCondition__c.Fields.StagetDescription__c.Label}">
+                <!--<div class="slds-truncate">{!oppo.StagetDescription__c}</div> -->
+                <p style="text-align:left;text-indent:35px;">{!oppo.StagetDescription__c}</p>
+              </td>
+            </tr>
+            </apex:repeat>
+          </tbody>
+        </table>
+
+      </div>
+    </body>
+  </html>
+</apex:page>

@@ -1,0 +1,16 @@
+<apex:page standardController="CustomObject22__c">
+    <apex:detail subject="{!CustomObject22__c.Id}" title="true" relatedListHover="true" oncomplete="javascript:location.reload();"/>      
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type ="text/javascript">
+            var jQuery = $.noConflict();
+            jQuery(document).ready(function(){
+                if('{!CustomObject22__c.Field1__c}' == 'false'||'{!CustomObject22__c.Approval__c}' == '待审批'){
+                    jQuery("[name = 'submit']").prop("disabled",true);  
+                    jQuery("[name = 'submit']").attr('class','btnDisabled');
+                    jQuery("[name = 'piSubmit']").prop("disabled",true);  
+                    jQuery("[name = 'piSubmit']").attr('class','btnDisabled');
+                    
+                }
+            });
+            </script>
+</apex:page>
